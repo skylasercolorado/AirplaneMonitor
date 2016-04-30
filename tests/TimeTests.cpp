@@ -28,11 +28,20 @@ struct timeParams
     int minute;
     int seconds;
 
-    timeParams(int hour, int minute, int seconds)
+    timeParams(int hour = 0, int minute = 0, int seconds = 0)
     {
         this->hour = hour;
         this->minute = minute;
         this->seconds = seconds;
+    }
+
+    timeParams setTimeParams(int hour, int minute, int seconds)
+    {
+        this->hour = hour;
+        this->minute = minute;
+        this->seconds = seconds;
+
+        return *this;
     }
 };
 
@@ -71,10 +80,13 @@ TEST_P(TimeParams, valueSweep)
 std::vector<timeParams> generateParams()
 {
     std::vector<timeParams> params;
+    timeParams temp;
+
     for(int i = 0; i <= 23; i+=10)
         for(int j = 0; j <= 59; j+=10)
             for(int k = 0; k <= 59; k+=10)
-                params.push_back(* new timeParams(i, j, k));
+//                params.push_back(* new timeParams(i, j, k));
+                params.push_back(temp.setTimeParams(i,j,k));
 
     return params;
 }
