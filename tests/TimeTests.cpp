@@ -91,7 +91,6 @@ TEST_F(TimeTests, TestOperatorOstream)
 
                 delete time1;
 
-//                cout << "\n verificationTime: " << verificationTime << ". s.str(): " << buffer.str() << ".\n";
                 EXPECT_EQ(verificationTime, buffer.str());
             }
 }
@@ -129,7 +128,6 @@ TEST_F(TimeTests, TestOperatorOstreamWithFile)
                     buffer += c;
                 readHandle.close();
 
-//                cout << "\n verificationTime: " << verificationTime << ". buffer: " << buffer << ".\n";
                 EXPECT_EQ(verificationTime, buffer);
             }
 }
@@ -161,7 +159,6 @@ TEST_P(TimeParams, valueSweep)
     timeParams params = GetParam();
 
     Time time(params.hour, params.minute, params.seconds);
-//    std::cout <<"\n hour: " << params.hour << ". minute: " << params.minute << ". seconds: " << params.seconds << ". \n\n";
     EXPECT_EQ(params.hour * Time::secondsInAnHour + params.minute * Time::secondsInAMinute + params.seconds, time.getTotalTimeAsSeconds());
 }
 
