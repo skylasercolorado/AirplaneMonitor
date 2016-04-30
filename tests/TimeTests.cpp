@@ -6,6 +6,7 @@
 #include "gtest/gtest.h"
 #include "gmock/gmock.h"
 #include <ostream>
+#include <fstream>
 
 using namespace Camax;
 using namespace std;
@@ -79,6 +80,13 @@ TEST_F(TimeTests, TestOperatorOstream)
     testStream << "Hello ostream";
 
     std::cout << "\n" << s.str() << "\n";
+
+    std::filebuf fb;
+    fb.open("test.txt", std::ios::out);
+
+    ostream os(&fb);
+    os << "Test sentence.\n";
+    fb.close();
 
 }
 
