@@ -14,7 +14,7 @@ namespace Camax
     class Time
     {
     public:
-        Time(int hours, int minutes, int seconds);
+        Time(int hours = 0, int minutes = 0, int seconds = 0);
         int getTotalTimeAsSeconds() const;
         const int secondsInAnHour = 3600;
         const int secondsInAMinute = 60;

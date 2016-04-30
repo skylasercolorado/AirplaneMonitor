@@ -74,17 +74,35 @@ TEST_F(TimeTests, Create)
 
 TEST_F(TimeTests, TestOperatorOstream)
 {
-    Time time(0, 0, 1);
+    Time *time1;
     stringbuf s;
     ostream testStream(&s);
-    testStream << "Hello ostream";
-    testStream << time;
+
+    for(int i = 0; i <= 23; i+=10)
+        for(int j = 0; j <= 59; j+=10)
+            for(int k = 0; k <= 59; k+=10)
+            {
+                time1 = new Time(i, j, k);
+                int timeInSeconds = i * 3600 + j * 60 + k;
+                string verificationTime = "time in seconds: " + to_string(timeInSeconds);
+//                testStream.clear();
+//                testStream.flush();
+                s.str("");
+//                s.str(nullptr);
+                testStream << *time1;
+
+                delete time1;
+
+                cout << "\n verificationTime: " << verificationTime << ". s.str(): " << s.str() << ".\n";
+                EXPECT_EQ(verificationTime, s.str());
+            }
 
     std::cout << "\n" << s.str() << "\n";
 
     std::filebuf fb;
     fb.open("test.txt", std::ios::out);
 
+    Time time(1,0,0);
     ostream os(&fb);
     os << "Test sentence.\n";
     os << time;
