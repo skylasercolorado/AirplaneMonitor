@@ -1,0 +1,27 @@
+@startuml
+
+class SineSignal {
++SineSignal(voltageOffset: double, timeOffset: Time, minVoltage: double, maxVoltage: double, period: Time)
++getVoltage(t: Time): double
+}
+
+class SawtoothSignal {
++SawtoothSignal(voltageOffset: double, timeOffset: Time, minVoltage: double, maxVoltage: double, period: Time)
++getVoltage(t: Time): double
+}
+
+abstract class PeriodicSignal {
+-minValue: double
+-maxValue: double
+-period: Time
+
++PeriodicSignal(voltageOffset: double, timeOffset: Time, minVoltage: double, maxVoltage: double, period: Time)
++{abstract} getVoltage(t: Time): double
+#getMinVoltage(): double
+#getMaxVoltage(): double
+#getPeriod(): Time
+}
+
+PeriodicSignal <|-- SineSignal
+PeriodicSignal <|-- SawtoothSignal
+@enduml
