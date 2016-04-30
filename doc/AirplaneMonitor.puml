@@ -1,5 +1,14 @@
 @startuml
 
+class Time {
+-seconds: int
+
++Time(hours: int, minutes: int, seconds: int)
++getTotalTimeAsSeconds(): int
++operator+=(rhs: Time& {readonly}): Time& {readonly}
++{static}operator<<(os: ostream&, rhs: Time& {readonly}): ostream&
+}
+
 class SineSignal {
 +SineSignal(voltageOffset: double, timeOffset: Time, minVoltage: double, maxVoltage: double, period: Time)
 +getVoltage(t: Time): double
