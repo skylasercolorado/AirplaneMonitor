@@ -17,3 +17,10 @@ int Time::getTotalTimeAsSeconds()
 {
     return seconds;
 }
+
+const Time& Time::operator+=(const Time& rhs)
+{
+    this->seconds += rhs.seconds;
+
+    return *this;
+}

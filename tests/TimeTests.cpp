@@ -69,6 +69,16 @@ TEST_F(TimeTests, Create)
     EXPECT_EQ(1, time.getTotalTimeAsSeconds());
 }
 
+TEST_F(TimeTests, PlusAssignOperator)
+{
+    Time time1(0, 0, 1);
+    Time time2(1, 0, 0);
+
+    time1 += time2;
+
+    EXPECT_EQ(1 * 3600 + 0 * 60 + 1, time1.getTotalTimeAsSeconds());
+}
+
 TEST_P(TimeParams, valueSweep)
 {
     timeParams params = GetParam();

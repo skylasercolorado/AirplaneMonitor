@@ -16,6 +16,7 @@ namespace Camax
         int getTotalTimeAsSeconds();
         const int secondsInAnHour = 3600;
         const int secondsInAMinute = 60;
+        const Time& operator+=(const Time& rhs);
 
     private:
         int seconds;
