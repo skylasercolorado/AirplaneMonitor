@@ -42,4 +42,43 @@ PeriodicSignal <|-- SawtoothSignal
 
 Signal <|-- ConstantSignal
 Signal <|-- PeriodicSignal
+
+class AngularSensor {
++AngularSensor(name: string, source: Signal&)
+#getUnits(): String
+}
+
+class PressureSensor {
++PressureSensor(name: string, source: Signal&)
+#getUnits(): String
+}
+
+class TemperatureSensor {
++TemperatureSensor(name: string, source: Signal&)
+#getUnits(): String
+}
+
+class VibrationSensor {
++VibrationSensor(name: string, source: Signal&)
+#getUnits(): String
+}
+
+abstract class Sensor {
+-name: string
+-source: Signal&
+
++Sensor(name: string, source: Signal&)
++void takeReading(t: Time, recorder: DataRecorder&)
+#{abstract} getUnits(): string
+#getName(): string
+#getSource(): Signal&
+}
+
+Sensor <|-- AngularSensor
+Sensor <|-- PressureSensor
+Sensor <|-- TemperatureSensor
+Sensor <|-- VibrationSensor
+
+Sensor "1" o-- "1" Signal
+
 @enduml
