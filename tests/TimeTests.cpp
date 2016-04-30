@@ -14,7 +14,7 @@ using namespace std;
 static const int maxHours = 23;
 static const int maxMinutes = 59;
 static const int maxSeconds = 59;
-static const int timeIncrement = 1;
+static const int timeIncrement = 10;
 
 class TimeTests : public ::testing::Test
 {
