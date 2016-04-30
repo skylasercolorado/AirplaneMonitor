@@ -5,8 +5,10 @@
 #include "Time.hpp"
 #include "gtest/gtest.h"
 #include "gmock/gmock.h"
+#include <ostream>
 
 using namespace Camax;
+using namespace std;
 
 class TimeTests : public ::testing::Test
 {
@@ -67,6 +69,18 @@ TEST_F(TimeTests, Create)
     Time time(0, 0, 1);
 
     EXPECT_EQ(1, time.getTotalTimeAsSeconds());
+}
+
+TEST_F(TimeTests, TestOperatorOstream)
+{
+    Time time(0, 0, 1);
+    ostream testStream(nullptr);
+    stringbuf s;
+    testStream.rdbuf(&s);
+    testStream << "Hello ostream";
+
+    std::cout << "\n" << s.str() << "\n";
+
 }
 
 TEST_F(TimeTests, PlusAssignOperator)
