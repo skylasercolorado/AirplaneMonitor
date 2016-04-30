@@ -8,10 +8,12 @@ using namespace Camax;
 
 Time::Time(int hours, int minute, int seconds)
 {
-
+    this->seconds = hours * secondsInAnHour +
+                    minute * secondsInAMinute +
+                    seconds;
 }
 
 int Time::getTotalTimeAsSeconds()
 {
-    return 0;
+    return seconds;
 }
