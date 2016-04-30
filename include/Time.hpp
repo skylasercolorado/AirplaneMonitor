@@ -19,8 +19,8 @@ namespace Camax
         const Time& operator+=(const Time& rhs);
         friend ostream& operator<<(ostream& os, const Time& time);
 
-        const int secondsInAnHour = 3600;
-        const int secondsInAMinute = 60;
+        static const int secondsInAnHour = 3600;
+        static const int secondsInAMinute = 60;
 
     private:
         int seconds;

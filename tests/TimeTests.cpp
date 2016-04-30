@@ -16,12 +16,10 @@ class TimeTests : public ::testing::Test
 public:
     void SetUp()
     {
-
     }
 
     void TearDown()
     {
-
     }
 };
 
@@ -53,12 +51,10 @@ class TimeParams : public TimeTests, public ::testing::WithParamInterface<timePa
 public:
     void SetUp()
     {
-
     }
 
     void TearDown()
     {
-
     }
 
 private:
@@ -83,7 +79,7 @@ TEST_F(TimeTests, TestOperatorOstream)
             for(int k = 0; k <= 59; k+=10)
             {
                 time1 = new Time(i, j, k);
-                int timeInSeconds = i * 3600 + j * 60 + k;
+                int timeInSeconds = i * Time::secondsInAnHour + j * Time::secondsInAMinute + k;
                 string verificationTime = "time in seconds: " + to_string(timeInSeconds);
                 buffer.str("");
                 outStream << *time1;
@@ -110,7 +106,7 @@ TEST_F(TimeTests, TestOperatorOstreamWithFile)
             for(int k = 0; k <= 59; k+=10)
             {
                 time1 = new Time(i, j, k);
-                int timeInSeconds = i * 3600 + j * 60 + k;
+                int timeInSeconds = i * Time::secondsInAnHour + j * Time::secondsInAMinute + k;
                 string verificationTime = "time in seconds: " + to_string(timeInSeconds);
 
                 writeHandle.open("test.txt", std::ios::out);
@@ -140,7 +136,7 @@ TEST_F(TimeTests, PlusAssignOperator)
 
     time1 += time2;
 
-    EXPECT_EQ(1 * 3600 + 0 * 60 + 1, time1.getTotalTimeAsSeconds());
+    EXPECT_EQ(1 * Time::secondsInAnHour + 0 * Time::secondsInAMinute + 1, time1.getTotalTimeAsSeconds());
 }
 
 TEST_F(TimeTests, PlusAssignOperatorSweep)
@@ -151,7 +147,7 @@ TEST_F(TimeTests, PlusAssignOperatorSweep)
     for(int i = 1; i < 10; i++)
     {
         time1 += time2;
-        EXPECT_EQ(i*3600 + i*60 + i, time1.getTotalTimeAsSeconds());
+        EXPECT_EQ(i*Time::secondsInAnHour + i*Time::secondsInAMinute + i, time1.getTotalTimeAsSeconds());
     }
 }
 
@@ -161,7 +157,7 @@ TEST_P(TimeParams, valueSweep)
 
     Time time(params.hour, params.minute, params.seconds);
     std::cout <<"\n hour: " << params.hour << ". minute: " << params.minute << ". seconds: " << params.seconds << ". \n\n";
-    EXPECT_EQ(params.hour * 3600 + params.minute * 60 + params.seconds, time.getTotalTimeAsSeconds());
+    EXPECT_EQ(params.hour * Time::secondsInAnHour + params.minute * Time::secondsInAMinute + params.seconds, time.getTotalTimeAsSeconds());
 }
 
 std::vector<timeParams> generateParams()
