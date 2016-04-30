@@ -98,11 +98,11 @@ TEST_F(TimeTests, TestOperatorOstream)
 TEST_F(TimeTests, TestOperatorOstreamWithFile)
 {
     Time *time1;
-    std::filebuf fb;
-    ostream os(&fb);
+    std::filebuf writeHandle;
+    ostream outputStream(&writeHandle);
 
-    std::filebuf fb2;
-    istream is(&fb2);
+    std::filebuf readHandle;
+    istream inputStream(&readHandle);
     string buffer;
 
     for(int i = 0; i <= 23; i+=10)
@@ -113,21 +113,22 @@ TEST_F(TimeTests, TestOperatorOstreamWithFile)
                 int timeInSeconds = i * 3600 + j * 60 + k;
                 string verificationTime = "time in seconds: " + to_string(timeInSeconds);
 
-                fb.open("test.txt", std::ios::out);
-                os << *time1;
-                fb.close();
+                writeHandle.open("test.txt", std::ios::out);
+                outputStream << *time1;
+                writeHandle.close();
 
                 delete time1;
 
-                is.clear();
+                inputStream.clear();
                 buffer.clear();
-                fb2.open("test.txt", std::ios::in);
-                char c;
-                while(is.get(c))
-                    buffer += c;
-                fb2.close();
+                readHandle.open("test.txt", std::ios::in);
 
-                cout << "\n verificationTime: " << verificationTime << ". s.str(): " << buffer << ".\n";
+                char c;
+                while(inputStream.get(c))
+                    buffer += c;
+                readHandle.close();
+
+                cout << "\n verificationTime: " << verificationTime << ". buffer: " << buffer << ".\n";
                 EXPECT_EQ(verificationTime, buffer);
             }
 }
