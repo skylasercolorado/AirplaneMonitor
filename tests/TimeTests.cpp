@@ -14,6 +14,7 @@ using namespace std;
 static const int maxHours = 23;
 static const int maxMinutes = 59;
 static const int maxSeconds = 59;
+static const int timeIncrement = 1;
 
 class TimeTests : public ::testing::Test
 {
@@ -78,9 +79,9 @@ TEST_F(TimeTests, TestOperatorOstream)
     stringbuf buffer;
     ostream outStream(&buffer);
 
-    for(int i = 0; i <= maxHours; i+=10)
-        for(int j = 0; j <= maxMinutes; j+=10)
-            for(int k = 0; k <= maxSeconds; k+=10)
+    for(int i = 0; i <= maxHours; i+= timeIncrement)
+        for(int j = 0; j <= maxMinutes; j+=timeIncrement)
+            for(int k = 0; k <= maxSeconds; k+=timeIncrement)
             {
                 time1 = new Time(i, j, k);
                 int timeInSeconds = i * Time::secondsInAnHour + j * Time::secondsInAMinute + k;
@@ -90,7 +91,7 @@ TEST_F(TimeTests, TestOperatorOstream)
 
                 delete time1;
 
-                cout << "\n verificationTime: " << verificationTime << ". s.str(): " << buffer.str() << ".\n";
+//                cout << "\n verificationTime: " << verificationTime << ". s.str(): " << buffer.str() << ".\n";
                 EXPECT_EQ(verificationTime, buffer.str());
             }
 }
@@ -105,9 +106,9 @@ TEST_F(TimeTests, TestOperatorOstreamWithFile)
     istream inputStream(&readHandle);
     string buffer;
 
-    for(int i = 0; i <= maxHours; i+=10)
-        for(int j = 0; j <= maxMinutes; j+=10)
-            for(int k = 0; k <= maxSeconds; k+=10)
+    for(int i = 0; i <= maxHours; i+=timeIncrement)
+        for(int j = 0; j <= maxMinutes; j+=timeIncrement)
+            for(int k = 0; k <= maxSeconds; k+=timeIncrement)
             {
                 time1 = new Time(i, j, k);
                 int timeInSeconds = i * Time::secondsInAnHour + j * Time::secondsInAMinute + k;
@@ -128,7 +129,7 @@ TEST_F(TimeTests, TestOperatorOstreamWithFile)
                     buffer += c;
                 readHandle.close();
 
-                cout << "\n verificationTime: " << verificationTime << ". buffer: " << buffer << ".\n";
+//                cout << "\n verificationTime: " << verificationTime << ". buffer: " << buffer << ".\n";
                 EXPECT_EQ(verificationTime, buffer);
             }
 }
@@ -160,7 +161,7 @@ TEST_P(TimeParams, valueSweep)
     timeParams params = GetParam();
 
     Time time(params.hour, params.minute, params.seconds);
-    std::cout <<"\n hour: " << params.hour << ". minute: " << params.minute << ". seconds: " << params.seconds << ". \n\n";
+//    std::cout <<"\n hour: " << params.hour << ". minute: " << params.minute << ". seconds: " << params.seconds << ". \n\n";
     EXPECT_EQ(params.hour * Time::secondsInAnHour + params.minute * Time::secondsInAMinute + params.seconds, time.getTotalTimeAsSeconds());
 }
 
@@ -169,9 +170,9 @@ std::vector<timeParams> generateParams()
     std::vector<timeParams> params;
     timeParams temp;
 
-    for(int i = 0; i <= maxHours; i+=10)
-        for(int j = 0; j <= maxMinutes; j+=10)
-            for(int k = 0; k <= maxSeconds; k+=10)
+    for(int i = 0; i <= maxHours; i+=timeIncrement)
+        for(int j = 0; j <= maxMinutes; j+=timeIncrement)
+            for(int k = 0; k <= maxSeconds; k+=timeIncrement)
                 params.push_back(temp.setTimeParams(i,j,k));
 
     return params;
