@@ -74,9 +74,8 @@ TEST_F(TimeTests, Create)
 TEST_F(TimeTests, TestOperatorOstream)
 {
     Time time(0, 0, 1);
-    ostream testStream(nullptr);
     stringbuf s;
-    testStream.rdbuf(&s);
+    ostream testStream(&s);
     testStream << "Hello ostream";
 
     std::cout << "\n" << s.str() << "\n";
