@@ -25,9 +25,12 @@ const Time& Time::operator+=(const Time& rhs)
     return *this;
 }
 
-ostream& operator<<(ostream& os, const Time& time)
+namespace Camax
 {
-    os << "time in seconds: " << time.getTotalTimeAsSeconds();
+    ostream& operator<<(ostream& os, const Time& time)
+    {
+        os << "time in seconds: " << time.getTotalTimeAsSeconds();
 
-    return os;
+        return os;
+    }
 }

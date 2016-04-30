@@ -78,6 +78,7 @@ TEST_F(TimeTests, TestOperatorOstream)
     stringbuf s;
     ostream testStream(&s);
     testStream << "Hello ostream";
+    testStream << time;
 
     std::cout << "\n" << s.str() << "\n";
 
@@ -86,6 +87,7 @@ TEST_F(TimeTests, TestOperatorOstream)
 
     ostream os(&fb);
     os << "Test sentence.\n";
+    os << time;
     fb.close();
 
 }
