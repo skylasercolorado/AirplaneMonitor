@@ -11,6 +11,10 @@
 using namespace Camax;
 using namespace std;
 
+static const int maxHours = 23;
+static const int maxMinutes = 59;
+static const int maxSeconds = 59;
+
 class TimeTests : public ::testing::Test
 {
 public:
@@ -74,9 +78,9 @@ TEST_F(TimeTests, TestOperatorOstream)
     stringbuf buffer;
     ostream outStream(&buffer);
 
-    for(int i = 0; i <= 23; i+=10)
-        for(int j = 0; j <= 59; j+=10)
-            for(int k = 0; k <= 59; k+=10)
+    for(int i = 0; i <= maxHours; i+=10)
+        for(int j = 0; j <= maxMinutes; j+=10)
+            for(int k = 0; k <= maxSeconds; k+=10)
             {
                 time1 = new Time(i, j, k);
                 int timeInSeconds = i * Time::secondsInAnHour + j * Time::secondsInAMinute + k;
@@ -101,9 +105,9 @@ TEST_F(TimeTests, TestOperatorOstreamWithFile)
     istream inputStream(&readHandle);
     string buffer;
 
-    for(int i = 0; i <= 23; i+=10)
-        for(int j = 0; j <= 59; j+=10)
-            for(int k = 0; k <= 59; k+=10)
+    for(int i = 0; i <= maxHours; i+=10)
+        for(int j = 0; j <= maxMinutes; j+=10)
+            for(int k = 0; k <= maxSeconds; k+=10)
             {
                 time1 = new Time(i, j, k);
                 int timeInSeconds = i * Time::secondsInAnHour + j * Time::secondsInAMinute + k;
@@ -165,9 +169,9 @@ std::vector<timeParams> generateParams()
     std::vector<timeParams> params;
     timeParams temp;
 
-    for(int i = 0; i <= 23; i+=10)
-        for(int j = 0; j <= 59; j+=10)
-            for(int k = 0; k <= 59; k+=10)
+    for(int i = 0; i <= maxHours; i+=10)
+        for(int j = 0; j <= maxMinutes; j+=10)
+            for(int k = 0; k <= maxSeconds; k+=10)
                 params.push_back(temp.setTimeParams(i,j,k));
 
     return params;
