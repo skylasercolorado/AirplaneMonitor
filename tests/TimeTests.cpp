@@ -93,18 +93,43 @@ TEST_F(TimeTests, TestOperatorOstream)
                 cout << "\n verificationTime: " << verificationTime << ". s.str(): " << buffer.str() << ".\n";
                 EXPECT_EQ(verificationTime, buffer.str());
             }
+}
 
-    std::cout << "\n" << buffer.str() << "\n";
-
+TEST_F(TimeTests, TestOperatorOstreamWithFile)
+{
+    Time *time1;
     std::filebuf fb;
-    fb.open("test.txt", std::ios::out);
-
-    Time time(1,0,0);
     ostream os(&fb);
-    os << "Test sentence.\n";
-    os << time;
-    fb.close();
 
+    std::filebuf fb2;
+    istream is(&fb2);
+    string buffer;
+
+    for(int i = 0; i <= 23; i+=10)
+        for(int j = 0; j <= 59; j+=10)
+            for(int k = 0; k <= 59; k+=10)
+            {
+                time1 = new Time(i, j, k);
+                int timeInSeconds = i * 3600 + j * 60 + k;
+                string verificationTime = "time in seconds: " + to_string(timeInSeconds);
+
+                fb.open("test.txt", std::ios::out);
+                os << *time1;
+                fb.close();
+
+                delete time1;
+
+                is.clear();
+                buffer.clear();
+                fb2.open("test.txt", std::ios::in);
+                char c;
+                while(is.get(c))
+                    buffer += c;
+                fb2.close();
+
+                cout << "\n verificationTime: " << verificationTime << ". s.str(): " << buffer << ".\n";
+                EXPECT_EQ(verificationTime, buffer);
+            }
 }
 
 TEST_F(TimeTests, PlusAssignOperator)
