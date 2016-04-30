@@ -48,6 +48,8 @@ TEST_F(SignalTests, Create)
 {
     Time b(0,0,45);
     TestSignal a(23, b);
+    Time temp = a.getTime();
 
     EXPECT_EQ(23, a.getVoltage());
+    EXPECT_EQ(45, temp.getTotalTimeAsSeconds());
 }
