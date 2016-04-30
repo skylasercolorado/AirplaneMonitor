@@ -90,4 +90,24 @@ Sensor <|-- VibrationSensor
 
 Sensor "1" o-- "1" Signal
 
+class DataRecorder {
+out: ostream&
+
++DataRecorder(ostream&)
++log(timestamp: Time, sensorName: string, sensorVoltage: double, sensorUnits: string)
+}
+
+class MonitoringSystem {
+-recorder: DataRecorder
+-sensors: Sensor& {ordered}
+
++MonitoringSystem(out: ostream&)
++addSensor(s: Sensor*)
++takeReading(t: Time)
+}
+
+DataRecorder <-- Sensor
+MonitoringSystem "1" *-- "1" DataRecorder
+MonitoringSystem "1" o-- "*" Sensor
+
 @enduml
