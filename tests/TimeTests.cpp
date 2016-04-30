@@ -74,6 +74,7 @@ TEST_P(TimeParams, valueSweep)
     timeParams params = GetParam();
 
     Time time(params.hour, params.minute, params.seconds);
+    std::cout <<"\n hour: " << params.hour << ". minute: " << params.minute << ". seconds: " << params.seconds << ". \n\n";
     EXPECT_EQ(params.hour * 3600 + params.minute * 60 + params.seconds, time.getTotalTimeAsSeconds());
 }
 
@@ -85,7 +86,6 @@ std::vector<timeParams> generateParams()
     for(int i = 0; i <= 23; i+=10)
         for(int j = 0; j <= 59; j+=10)
             for(int k = 0; k <= 59; k+=10)
-//                params.push_back(* new timeParams(i, j, k));
                 params.push_back(temp.setTimeParams(i,j,k));
 
     return params;
