@@ -16,12 +16,30 @@ abstract class PeriodicSignal {
 -period: Time
 
 +PeriodicSignal(voltageOffset: double, timeOffset: Time, minVoltage: double, maxVoltage: double, period: Time)
-+{abstract} getVoltage(t: Time): double
++{abstract} getVoltageAtTime(t: Time): double
 #getMinVoltage(): double
 #getMaxVoltage(): double
 #getPeriod(): Time
 }
 
+class ConstantSignal {
++ConstantSignal(voltageOffset: double, timeOffset: Time)
++getVoltage(t: Time): double
+}
+
+abstract class Signal {
+-voltageOffset: double
+-timeOffset: Time
+
++Signal(valueOffset: double, timeOffset: Time)
++{abstract} getVoltageAtTime(t: Time): double
+#getVoltageOffset(): double
+#getTimeOffset(): Time
+}
+
 PeriodicSignal <|-- SineSignal
 PeriodicSignal <|-- SawtoothSignal
+
+Signal <|-- ConstantSignal
+Signal <|-- PeriodicSignal
 @enduml
