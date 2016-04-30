@@ -5,7 +5,9 @@
       <sourceFolder url="file://$MODULE_DIR$/CMakeLists.txt" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/Time.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/tests/TimeTests.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/tests/SignalTests.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/include/Time.hpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/include/Signal.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/app/app.cpp" isTestSource="false" />
     </content>
     <orderEntry type="sourceFolder" forTests="false" />
