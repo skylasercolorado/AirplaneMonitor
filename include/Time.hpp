@@ -7,16 +7,19 @@
 
 #include <ostream>
 
+using namespace std;
+
 namespace Camax
 {
     class Time
     {
     public:
         Time(int hours, int minutes, int seconds);
-        int getTotalTimeAsSeconds();
+        int getTotalTimeAsSeconds() const;
         const int secondsInAnHour = 3600;
         const int secondsInAMinute = 60;
         const Time& operator+=(const Time& rhs);
+        friend ostream& operator<<(ostream& os, const Time& time);
 
     private:
         int seconds;

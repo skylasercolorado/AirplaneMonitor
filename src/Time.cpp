@@ -13,7 +13,7 @@ Time::Time(int hours, int minute, int seconds)
                     seconds;
 }
 
-int Time::getTotalTimeAsSeconds()
+int Time::getTotalTimeAsSeconds() const
 {
     return seconds;
 }
@@ -23,4 +23,11 @@ const Time& Time::operator+=(const Time& rhs)
     this->seconds += rhs.seconds;
 
     return *this;
+}
+
+ostream& operator<<(ostream& os, const Time& time)
+{
+    os << "time in seconds: " << time.getTotalTimeAsSeconds();
+
+    return os;
 }
