@@ -17,6 +17,7 @@ namespace Camax
             this->voltageOffset = valueOffset;
             this->timeOffset = timeOffset;
         }
+        virtual ~Signal() {}
         virtual double getVoltageAtTime(Time t) = 0;
 
     protected:
