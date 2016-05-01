@@ -22,7 +22,7 @@ namespace Camax
         {
             double firstPart = this->getVoltageOffset() + this->getMinVoltage() + (this->getMaxVoltage() - this->getMinVoltage()) / 2;
             double secondsPart = sin((t.getTotalTimeAsSeconds() + this->getTimeOffset().getTotalTimeAsSeconds()) * 2
-                                     * Pi / this->getPeriod().getTotalTimeAsSeconds()) / 2;
+                                     * Pi / this->getPeriod().getTotalTimeAsSeconds()) * (this->getMaxVoltage() - this->getMinVoltage()) / 2;
 
             return (firstPart + secondsPart);
         }
