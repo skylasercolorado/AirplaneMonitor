@@ -46,11 +46,15 @@ public:
 
 TEST_F(SignalTests, Create)
 {
-    Time b(0,0,45);
-    TestSignal a(23, b);
-    Signal *handle = &a;
+    int seconds = 45;
+    int voltage = 23;
+    double multiplier = 1.0;
 
-    EXPECT_EQ(23, a.getVoltage());
-    EXPECT_EQ(45, a.getTime().getTotalTimeAsSeconds());
-    EXPECT_EQ(1.0 * 45, handle->getVoltageAtTime(b));
+    Time time1(0, 0, seconds);
+    TestSignal signal1(voltage, time1);
+    Signal *handle = &signal1;
+
+    EXPECT_EQ(voltage, signal1.getVoltage());
+    EXPECT_EQ(seconds, signal1.getTime().getTotalTimeAsSeconds());
+    EXPECT_EQ(multiplier * seconds, handle->getVoltageAtTime(time1));
 }
