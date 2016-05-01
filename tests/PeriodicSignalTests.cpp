@@ -59,9 +59,13 @@ TEST_F(PeriodicSignalTest, ConstructAndTestAccessorsAndPureVirtualImplementation
     Time time(0, 0, seconds);
     double minVal = 1;
     double maxVal = 10;
-    double period = 60;
+    Time period(0, 1, 0);
 
     PeriodicTestSignal signal1(voltage, time, minVal, maxVal, period);
 
     EXPECT_EQ(voltage, signal1.getVoltage());
+    EXPECT_EQ(seconds, signal1.getTime().getTotalTimeAsSeconds());
+    EXPECT_EQ(minVal, signal1.getMin());
+    EXPECT_EQ(maxVal, signal1.getMax());
+    EXPECT_EQ(period.getTotalTimeAsSeconds(), signal1.getThisPeriod().getTotalTimeAsSeconds());
 }
