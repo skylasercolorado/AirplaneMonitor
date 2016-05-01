@@ -54,6 +54,8 @@ TEST_F(SensorTests, ConstructAndTestAccessors)
     EXPECT_TRUE(memcmp(signal, testSignal, sizeof(ConstantSignal)) == 0);
 
     EXPECT_EQ("test units", sensor.getUnits());
+
+    delete signal;
 }
 
 using ::testing::_;
@@ -83,4 +85,6 @@ TEST_F(SensorTests, WithMockOfDataRecorder)
                                  }));
 
     sensor.takeReading(time1, dataRecorderMock);
+
+    delete signal;
 }
