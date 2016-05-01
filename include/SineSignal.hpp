@@ -6,9 +6,12 @@
 #define AIRPLANEMONITOR_SINESIGNAL_HPP
 
 #include "PeriodicSignal.hpp"
+#include <cmath>
 
 namespace Camax
 {
+    const double Pi = 3.14159265358979323846;
+
     class SineSignal : public PeriodicSignal
     {
     public:
@@ -18,7 +21,8 @@ namespace Camax
         double getVoltageAtTime(Time t)
         {
             double firstPart = this->getVoltageOffset() + this->getMinVoltage() + (this->getMaxVoltage() - this->getMinVoltage()) / 2;
-            double secondsPart = sin((t.getTotalTimeAsSeconds() + this->getTimeOffset()) * 2 * Pi / this->getPeriod()) / 2;
+            double secondsPart = sin((t.getTotalTimeAsSeconds() + this->getTimeOffset().getTotalTimeAsSeconds()) * 2
+                                     * Pi / this->getPeriod().getTotalTimeAsSeconds()) / 2;
 
             return (firstPart + secondsPart);
         }

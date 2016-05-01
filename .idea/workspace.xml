@@ -46,9 +46,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="feadd650-a5b1-4517-9b0c-f59ef4681d73" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/include/ConstantSignal.hpp" afterPath="$PROJECT_DIR$/include/ConstantSignal.hpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/include/PeriodicSignal.hpp" afterPath="$PROJECT_DIR$/include/PeriodicSignal.hpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/AirplaneMonitor.iml" afterPath="$PROJECT_DIR$/.idea/AirplaneMonitor.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/include/SineSignal.hpp" afterPath="$PROJECT_DIR$/include/SineSignal.hpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/include/Time.hpp" afterPath="$PROJECT_DIR$/include/Time.hpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/TimeTests.cpp" afterPath="$PROJECT_DIR$/tests/TimeTests.cpp" />
     </list>
     <ignored path="AirplaneMonitor.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -130,17 +131,20 @@
               <caret line="14" column="14" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
               <folding>
                 <element signature="e#40#64#0" expanded="true" />
+                <marker date="1462079154349" expanded="true" signature="534:582" placeholder="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SineSignal.hpp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SineSignal.hpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/include/SineSignal.hpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="8" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="8" />
-              <folding />
+            <state relative-caret-position="360">
+              <caret line="31" column="38" selection-start-line="31" selection-start-column="38" selection-end-line="31" selection-end-column="38" />
+              <folding>
+                <element signature="e#119#148#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -158,18 +162,18 @@
       <file leaf-file-name="Time.hpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/include/Time.hpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+            <state relative-caret-position="345">
+              <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TimeTests.cpp" pinned="false" current-in-tab="false">
+      <file leaf-file-name="TimeTests.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tests/TimeTests.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="615">
-              <caret line="41" column="4" selection-start-line="41" selection-start-column="4" selection-end-line="41" selection-end-column="4" />
+            <state relative-caret-position="255">
+              <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
               <folding>
                 <element signature="e#40#59#0" expanded="true" />
               </folding>
@@ -196,14 +200,14 @@
         <option value="$PROJECT_DIR$/doc/AirplaneMonitor.puml" />
         <option value="$PROJECT_DIR$/app/app.cpp" />
         <option value="$PROJECT_DIR$/src/Time.cpp" />
-        <option value="$PROJECT_DIR$/include/Time.hpp" />
-        <option value="$PROJECT_DIR$/tests/TimeTests.cpp" />
         <option value="$PROJECT_DIR$/tests/SignalTests.cpp" />
         <option value="$PROJECT_DIR$/tests/ConstantSignalTests.cpp" />
         <option value="$PROJECT_DIR$/tests/PeriodicSignalTests.cpp" />
-        <option value="$PROJECT_DIR$/include/SineSignal.hpp" />
         <option value="$PROJECT_DIR$/include/PeriodicSignal.hpp" />
         <option value="$PROJECT_DIR$/include/ConstantSignal.hpp" />
+        <option value="$PROJECT_DIR$/include/SineSignal.hpp" />
+        <option value="$PROJECT_DIR$/include/Time.hpp" />
+        <option value="$PROJECT_DIR$/tests/TimeTests.cpp" />
       </list>
     </option>
   </component>
@@ -748,16 +752,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/TimeTests.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="615">
-          <caret line="41" column="4" selection-start-line="41" selection-start-column="4" selection-end-line="41" selection-end-column="4" />
-          <folding>
-            <element signature="e#40#59#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tests/SignalTests.cpp.cpp" />
     <entry file="file://$PROJECT_DIR$/doc/AirplaneMonitor.puml">
       <provider selected="true" editor-type-id="text-editor">
@@ -793,15 +787,8 @@
           <caret line="14" column="14" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
           <folding>
             <element signature="e#40#64#0" expanded="true" />
+            <marker date="1462079154349" expanded="true" signature="534:582" placeholder="{...}" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/include/Time.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -831,9 +818,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/include/SineSignal.hpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="8" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="8" />
+        <state relative-caret-position="360">
+          <caret line="31" column="38" selection-start-line="31" selection-start-column="38" selection-end-line="31" selection-end-column="38" />
+          <folding>
+            <element signature="e#119#148#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/Time.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/TimeTests.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding>
+            <element signature="e#40#59#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -11,6 +11,9 @@ using namespace std;
 
 namespace Camax
 {
+    const int secondsInAnHour = 3600;
+    const int secondsInAMinute = 60;
+
     class Time
     {
     public:
@@ -18,9 +21,6 @@ namespace Camax
         int getTotalTimeAsSeconds() const;
         const Time& operator+=(const Time& rhs);
         friend ostream& operator<<(ostream& os, const Time& time);
-
-        static const int secondsInAnHour = 3600;
-        static const int secondsInAMinute = 60;
 
     private:
         int seconds;

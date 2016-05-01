@@ -84,7 +84,7 @@ TEST_F(TimeTests, TestOperatorOstream)
             for(int k = 0; k <= maxSeconds; k+=timeIncrement)
             {
                 time1 = new Time(i, j, k);
-                int timeInSeconds = i * Time::secondsInAnHour + j * Time::secondsInAMinute + k;
+                int timeInSeconds = i * secondsInAnHour + j * secondsInAMinute + k;
                 string verificationTime = "time in seconds: " + to_string(timeInSeconds);
                 buffer.str("");
                 outStream << *time1;
@@ -110,7 +110,7 @@ TEST_F(TimeTests, TestOperatorOstreamWithFile)
             for(int k = 0; k <= maxSeconds; k+=timeIncrement)
             {
                 time1 = new Time(i, j, k);
-                int timeInSeconds = i * Time::secondsInAnHour + j * Time::secondsInAMinute + k;
+                int timeInSeconds = i * secondsInAnHour + j * secondsInAMinute + k;
                 string verificationTime = "time in seconds: " + to_string(timeInSeconds);
 
                 writeHandle.open("test.txt", std::ios::out);
@@ -139,7 +139,7 @@ TEST_F(TimeTests, PlusAssignOperator)
 
     time1 += time2;
 
-    EXPECT_EQ(1 * Time::secondsInAnHour + 0 * Time::secondsInAMinute + 1, time1.getTotalTimeAsSeconds());
+    EXPECT_EQ(1 * secondsInAnHour + 0 * secondsInAMinute + 1, time1.getTotalTimeAsSeconds());
 }
 
 TEST_F(TimeTests, PlusAssignOperatorSweep)
@@ -150,7 +150,7 @@ TEST_F(TimeTests, PlusAssignOperatorSweep)
     for(int i = 1; i < 10; i++)
     {
         time1 += time2;
-        EXPECT_EQ(i*Time::secondsInAnHour + i*Time::secondsInAMinute + i, time1.getTotalTimeAsSeconds());
+        EXPECT_EQ(i*secondsInAnHour + i*secondsInAMinute + i, time1.getTotalTimeAsSeconds());
     }
 }
 
@@ -159,7 +159,7 @@ TEST_P(TimeParams, valueSweep)
     timeParams params = GetParam();
 
     Time time(params.hour, params.minute, params.seconds);
-    EXPECT_EQ(params.hour * Time::secondsInAnHour + params.minute * Time::secondsInAMinute + params.seconds, time.getTotalTimeAsSeconds());
+    EXPECT_EQ(params.hour * secondsInAnHour + params.minute * secondsInAMinute + params.seconds, time.getTotalTimeAsSeconds());
 }
 
 std::vector<timeParams> generateParams()
