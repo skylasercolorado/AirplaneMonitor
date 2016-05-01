@@ -11,14 +11,16 @@ namespace Camax
 {
     class SawtoothSignal : public PeriodicSignal
     {
+    public:
         SawtoothSignal(double voltageOffset, Time timeOffset, double minVoltage, double maxVoltage, Time period)
                 : PeriodicSignal(voltageOffset, timeOffset, minVoltage, maxVoltage, period) {}
 
         double getVoltageAtTime(Time t)
         {
             double firstPart = this->getVoltageOffset() + this->getMinVoltage();
-            double secondPart = ((t.getTotalTimeAsSeconds() + this->getTimeOffset().getTotalTimeAsSeconds()) *
-                    (this->getMaxVoltage() - this->getMinVoltage()) / this->getPeriod()) % (this->getMaxVoltage() - this->getMinVoltage());
+            double secondPart = fmod(((t.getTotalTimeAsSeconds() + this->getTimeOffset().getTotalTimeAsSeconds()) *
+                                      (this->getMaxVoltage() - this->getMinVoltage()) / this->getPeriod().getTotalTimeAsSeconds()),
+                                     (this->getMaxVoltage() - this->getMinVoltage()));
 
             return (firstPart + secondPart);
         }
