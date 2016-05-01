@@ -45,7 +45,10 @@
     </ADDITIONAL_GENERATION_ENVIRONMENT>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="feadd650-a5b1-4517-9b0c-f59ef4681d73" name="Default" comment="" />
+    <list default="true" id="feadd650-a5b1-4517-9b0c-f59ef4681d73" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/include/Sensor.hpp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tests/SensorTests.cpp" />
+    </list>
     <ignored path="AirplaneMonitor.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -75,29 +78,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PeriodicSignal.hpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/include/PeriodicSignal.hpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="358">
-              <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PeriodicSignalTests.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tests/PeriodicSignalTests.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="14" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
-              <folding>
-                <element signature="e#40#64#0" expanded="true" />
-                <marker date="1462079154349" expanded="true" signature="534:582" placeholder="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="SineSignal.hpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/include/SineSignal.hpp">
           <provider selected="true" editor-type-id="text-editor">
@@ -110,13 +90,36 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SawtoothSignalTests.cpp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SawtoothSignalTests.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tests/SawtoothSignalTests.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="488">
+            <state relative-caret-position="360">
               <caret line="59" column="0" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
               <folding>
                 <element signature="e#40#58#0" expanded="true" />
+                <marker date="1462085453155" expanded="true" signature="496:809" placeholder="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Sensor.hpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/include/Sensor.hpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="18" column="37" selection-start-line="18" selection-start-column="37" selection-end-line="18" selection-end-column="37" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SensorTests.cpp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/tests/SensorTests.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="458">
+              <caret line="55" column="0" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
+              <folding>
+                <element signature="e#39#63#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -139,7 +142,9 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="360">
               <caret line="29" column="10" selection-start-line="29" selection-start-column="10" selection-end-line="29" selection-end-column="10" />
-              <folding />
+              <folding>
+                <marker date="1462085298735" expanded="true" signature="500:973" placeholder="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -204,6 +209,9 @@
         <option value="$PROJECT_DIR$/tests/SineSignalTests.cpp" />
         <option value="$PROJECT_DIR$/include/SawtoothSignal.hpp" />
         <option value="$PROJECT_DIR$/tests/SawtoothSignalTests.cpp" />
+        <option value="$PROJECT_DIR$/include/Sensor.hpp" />
+        <option value="$PROJECT_DIR$/tests/SesnorTests.cpp" />
+        <option value="$PROJECT_DIR$/tests/SensorTests.cpp" />
       </list>
     </option>
   </component>
@@ -774,7 +782,7 @@
         <state relative-caret-position="210">
           <caret line="14" column="14" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
           <folding>
-            <element signature="e#40#64#0" expanded="true" />
+            <element signature="e#40#64#0" expanded="false" />
             <marker date="1462079154349" expanded="true" signature="534:582" placeholder="{...}" />
           </folding>
         </state>
@@ -784,14 +792,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="358">
           <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/include/ConstantSignal.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="1" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
           <folding />
         </state>
       </provider>
@@ -834,7 +834,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
           <caret line="29" column="10" selection-start-line="29" selection-start-column="10" selection-end-line="29" selection-end-column="10" />
-          <folding />
+          <folding>
+            <marker date="1462085298735" expanded="true" signature="500:973" placeholder="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -850,10 +852,37 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/SawtoothSignalTests.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="488">
+        <state relative-caret-position="360">
           <caret line="59" column="0" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
           <folding>
             <element signature="e#40#58#0" expanded="true" />
+            <marker date="1462085453155" expanded="true" signature="496:809" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/Sensor.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="18" column="37" selection-start-line="18" selection-start-column="37" selection-end-line="18" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/ConstantSignal.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="1" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/SensorTests.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="458">
+          <caret line="55" column="0" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
+          <folding>
+            <element signature="e#39#63#0" expanded="true" />
           </folding>
         </state>
       </provider>
