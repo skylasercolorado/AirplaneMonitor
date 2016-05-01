@@ -46,7 +46,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="feadd650-a5b1-4517-9b0c-f59ef4681d73" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/include/Signal.hpp" afterPath="$PROJECT_DIR$/include/Signal.hpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/include/Sensor.hpp" afterPath="$PROJECT_DIR$/include/Sensor.hpp" />
     </list>
     <ignored path="AirplaneMonitor.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -89,21 +89,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Signal.hpp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Signal.hpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/include/Signal.hpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="27" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="27" />
+            <state relative-caret-position="330">
+              <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Sensor.hpp" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Sensor.hpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/include/Sensor.hpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="21" column="11" selection-start-line="21" selection-start-column="11" selection-end-line="21" selection-end-column="11" />
+            <state relative-caret-position="233">
+              <caret line="16" column="26" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
               <folding>
                 <element signature="e#110#131#0" expanded="true" />
               </folding>
@@ -145,11 +145,11 @@
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/include/IDataRecorder.hpp" />
         <option value="$PROJECT_DIR$/mock/inc/DataRecorderMock.hpp" />
-        <option value="$PROJECT_DIR$/include/Sensor.hpp" />
         <option value="$PROJECT_DIR$/tests/SensorTests.cpp" />
         <option value="$PROJECT_DIR$/tests/TimeTests.cpp" />
         <option value="$PROJECT_DIR$/include/AngularSensor.hpp" />
         <option value="$PROJECT_DIR$/include/Signal.hpp" />
+        <option value="$PROJECT_DIR$/include/Sensor.hpp" />
       </list>
     </option>
   </component>
@@ -838,16 +838,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/include/Sensor.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="21" column="11" selection-start-line="21" selection-start-column="11" selection-end-line="21" selection-end-column="11" />
-          <folding>
-            <element signature="e#110#131#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/include/AngularSensor.hpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
@@ -868,9 +858,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/include/Signal.hpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="27" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="27" />
+        <state relative-caret-position="330">
+          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/Sensor.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="233">
+          <caret line="16" column="26" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
+          <folding>
+            <element signature="e#110#131#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

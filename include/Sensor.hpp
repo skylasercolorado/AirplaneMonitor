@@ -14,6 +14,7 @@ namespace Camax
     {
     public:
         Sensor(string name, Signal &source) : name(name), source(source) {}
+        virtual ~Sensor() {}
         void takeReading(Time t, IDataRecorder &recorder)
         {
             recorder.log(t, name, source.getVoltageAtTime(t), this->getUnits());
