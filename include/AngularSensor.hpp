@@ -17,7 +17,7 @@ namespace Camax
     protected:
         virtual string getUnits()
         {
-            return "rad/s";
+            return "radians";
         }
     };
 }
