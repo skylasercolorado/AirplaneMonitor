@@ -34,10 +34,14 @@ TEST_F(SineTest, TestSineValue)
     double minVoltage = 1;
     double maxVoltage = 10;
     Time period(0, 0, 60);
-    Time t(0, 0, 55);
 
     SineSignal sineSignal(voltageOffset, timeOffset, minVoltage, maxVoltage, period);
 
-    EXPECT_EQ(sine(voltageOffset, timeOffset, minVoltage, maxVoltage, period, t),
-              sineSignal.getVoltageAtTime(t));
+    for(int i = 0; i < 100; i += 10)
+    {
+        Time t(0, 0, i);
+
+        EXPECT_EQ(sine(voltageOffset, timeOffset, minVoltage, maxVoltage, period, t),
+                  sineSignal.getVoltageAtTime(t));
+    }
 }
