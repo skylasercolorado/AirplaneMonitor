@@ -24,6 +24,7 @@ set(APPLICATION "application")
 include_directories(${INC_DIR})
 include_directories(${MOCK_INC_DIR})
 include_directories("/usr/include/gtest") # Google Test headers
+include_directories("/usr/include/gmock") # Google Mock headers
 
 # Create the directories if they do not already exist
 file(MAKE_DIRECTORY ${APP_DIR})
@@ -54,8 +55,9 @@ target_link_libraries(${APPLICATION} ${PROJ_LIB})
 # Create the Google Test Runner, with Google Test's libraries
 # and this project's source library
 add_executable(${TEST_RUNNER} ${TEST_FILES} ${MOCK_SRC_FILES} ${INC_FILES} ${MOCK_INC_FILES})
+target_link_libraries(${TEST_RUNNER} "pthread") # The order of these libraries is very important!!!. Do not change!!
+target_link_libraries(${TEST_RUNNER} "gmock_main")
+target_link_libraries(${TEST_RUNNER} "gmock")
 target_link_libraries(${TEST_RUNNER} "gtest")
-target_link_libraries(${TEST_RUNNER} "gtest_main")
-target_link_libraries(${TEST_RUNNER} "pthread")
 target_link_libraries(${TEST_RUNNER} ${PROJ_LIB})
 

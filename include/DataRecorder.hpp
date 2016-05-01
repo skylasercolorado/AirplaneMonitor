@@ -5,9 +5,11 @@
 #ifndef AIRPLANEMONITOR_DATARECORDER_HPP
 #define AIRPLANEMONITOR_DATARECORDER_HPP
 
+#include "IDataRecorder.hpp"
+
 namespace Camax
 {
-    class DataRecorder
+    class DataRecorder : IDataRecorder
     {
 
     };

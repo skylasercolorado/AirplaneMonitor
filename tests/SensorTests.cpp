@@ -2,6 +2,7 @@
 // Created by duncan on 5/1/16.
 //
 
+#include "DataRecorderMock.hpp"
 #include "gtest/gtest.h"
 #include "gmock/gmock.h"
 #include "Sensor.hpp"
@@ -55,4 +56,21 @@ TEST_F(SensorTests, ConstructAndTestAccessors)
     EXPECT_EQ("test units", sensor.getUnits());
 }
 
+using ::testing::_;
+using ::testing::AnyNumber;
 
+TEST_F(SensorTests, TestMockOfDataRecorder)
+{
+    string name = "test sensor";
+    int seconds = 45;
+    int voltage = 23;
+    ConstantSignal *signal = new ConstantSignal(voltage, Time(0, 0, seconds));
+
+    SensorTest sensor(name, *signal);
+
+    DataRecorderMock dataRecorderMock;
+
+    EXPECT_CALL(dataRecorderMock, log(_,_,_,_));
+
+    sensor.takeReading(Time(0, 0, seconds), dataRecorderMock);
+}

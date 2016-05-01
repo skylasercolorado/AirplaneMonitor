@@ -15,9 +15,6 @@ namespace Camax
     public:
         virtual ~IDataRecorder() {}
         virtual void log(Time timeStamp, string sensorName, double sensorVoltage, string sensorUnits) = 0;
-
-    protected:
-        ostream os;
     };
 }
 
