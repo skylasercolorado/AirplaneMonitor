@@ -44,7 +44,7 @@ public:
     }
 };
 
-TEST_F(SignalTests, Create)
+TEST_F(SignalTests, ConstructorTestAccessorsAndPureVirtualCall)
 {
     int seconds = 45;
     int voltage = 23;
