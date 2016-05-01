@@ -7,16 +7,17 @@
 
 #include "Signal.hpp"
 
-using namespace Camax;
-
-class ConstantSignal : public Signal
+namespace Camax
 {
-public:
-    ConstantSignal(double voltageOffset, Time timeOffset) : Signal(voltageOffset, timeOffset) {}
-    double getVoltageAtTime(Time t)
+    class ConstantSignal : public Signal
     {
-        return this->getVoltageOffset();
-    }
-};
+    public:
+        ConstantSignal(double voltageOffset, Time timeOffset) : Signal(voltageOffset, timeOffset) {}
+        double getVoltageAtTime(Time t)
+        {
+            return this->getVoltageOffset();
+        }
+    };
+}
 
 #endif //AIRPLANEMONITOR_CONSTANTSIGNAL_HPP

@@ -7,27 +7,28 @@
 
 #include "Signal.hpp"
 
-using namespace Camax;
-
-class PeriodicSignal : public Signal
+namespace Camax
 {
-public:
-    PeriodicSignal(double voltageOffset, Time timeOffset, double minVoltage, double maxVoltage, Time period) :
-            Signal(voltageOffset, timeOffset), minValue(minVoltage), maxValue(maxVoltage)
+    class PeriodicSignal : public Signal
     {
-       this->period = period;
-    }
-    virtual double getVoltageAtTime(Time t) = 0;
+    public:
+        PeriodicSignal(double voltageOffset, Time timeOffset, double minVoltage, double maxVoltage, Time period) :
+                Signal(voltageOffset, timeOffset), minValue(minVoltage), maxValue(maxVoltage)
+        {
+            this->period = period;
+        }
+        virtual double getVoltageAtTime(Time t) = 0;
 
-protected:
-    double getMinVoltage() { return minValue; };
-    double getMaxVoltage() { return maxValue; };
-    Time getPeriod() { return period; };
+    protected:
+        double getMinVoltage() { return minValue; };
+        double getMaxVoltage() { return maxValue; };
+        Time getPeriod() { return period; };
 
-private:
-    double minValue;
-    double maxValue;
-    Time period;
-};
+    private:
+        double minValue;
+        double maxValue;
+        Time period;
+    };
+}
 
 #endif //AIRPLANEMONITOR_PERIODICSIGNAL_HPP
