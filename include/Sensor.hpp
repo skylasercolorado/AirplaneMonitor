@@ -6,6 +6,7 @@
 #define AIRPLANEMONITOR_SENSOR_HPP
 
 #include "Signal.hpp"
+#include "DataRecorder.hpp"
 
 namespace Camax
 {
@@ -13,7 +14,7 @@ namespace Camax
     {
     public:
         Sensor(string name, Signal &source) : name(name), source(source) {}
-//        void takeReading(Time t, DataRecorder &recorder);
+        void takeReading(Time t, DataRecorder &recorder);
 
     protected:
         virtual string getUnits() = 0;
