@@ -58,8 +58,9 @@ TEST_F(SensorTests, ConstructAndTestAccessors)
 
 using ::testing::_;
 using ::testing::AnyNumber;
+using ::testing::Invoke;
 
-TEST_F(SensorTests, TestMockOfDataRecorder)
+TEST_F(SensorTests, WithMockOfDataRecorder)
 {
     string name = "test sensor";
     int seconds = 45;
@@ -70,7 +71,14 @@ TEST_F(SensorTests, TestMockOfDataRecorder)
 
     DataRecorderMock dataRecorderMock;
 
-    EXPECT_CALL(dataRecorderMock, log(_,_,_,_));
+    EXPECT_CALL(dataRecorderMock, log(_,_,_,_))
+                .WillOnce(Invoke([&](Time timeStamp, string sensorName, double sensorVoltage, string sensorUnits)
+                                 {
+                                     EXPECT_EQ(name, sensorName);
+                                     EXPECT_EQ(voltage, sensorVoltage);
+                                     EXPECT_EQ("test units", sensorUnits);
+
+                                 }));
 
     sensor.takeReading(Time(0, 0, seconds), dataRecorderMock);
 }
