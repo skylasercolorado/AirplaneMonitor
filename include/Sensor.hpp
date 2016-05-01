@@ -14,7 +14,14 @@ namespace Camax
     {
     public:
         Sensor(string name, Signal &source) : name(name), source(source) {}
-        void takeReading(Time t, DataRecorder &recorder);
+        void takeReading(Time t, DataRecorder &recorder)
+        {
+            source.getVoltageAtTime(t);
+            // store it at recorder
+            // create data recorder interface, implement a mock with it
+            // then do the test with said mock
+
+        }
 
     protected:
         virtual string getUnits() = 0;

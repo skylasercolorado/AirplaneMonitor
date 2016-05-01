@@ -12,13 +12,16 @@
       <sourceFolder url="file://$MODULE_DIR$/tests/SawtoothSignalTests.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/tests/SignalTests.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/include/SineSignal.hpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/include/IDataRecorder.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/include/Time.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/include/Sensor.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/include/ConstantSignal.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/include/Signal.hpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/include/DataRecorder.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/include/SawtoothSignal.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/include/PeriodicSignal.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/app/app.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/mock/inc/DataRecorderMock.hpp" isTestSource="false" />
     </content>
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module-library">
