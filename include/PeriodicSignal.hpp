@@ -15,7 +15,7 @@ public:
     PeriodicSignal(double voltageOffset, Time timeOffset, double minVoltage, double maxVoltage, Time period) :
             Signal(voltageOffset, timeOffset), minValue(minVoltage), maxValue(maxVoltage)
     {
-       this->period(period);
+       this->period = period;
     }
     virtual double getVoltageAtTime(Time t) = 0;
 
