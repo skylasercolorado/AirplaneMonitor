@@ -15,7 +15,7 @@ public:
 
     virtual double getVoltageAtTime(Time t)
     {
-        return 3.1415;
+        return 1.0 * t.getTotalTimeAsSeconds();
     }
 
     double getVoltage()
@@ -48,7 +48,9 @@ TEST_F(SignalTests, Create)
 {
     Time b(0,0,45);
     TestSignal a(23, b);
+    Signal *handle = &a;
 
     EXPECT_EQ(23, a.getVoltage());
     EXPECT_EQ(45, a.getTime().getTotalTimeAsSeconds());
+    EXPECT_EQ(1.0 * 45, handle->getVoltageAtTime(b));
 }
