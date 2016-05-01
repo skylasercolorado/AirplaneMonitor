@@ -2,6 +2,7 @@
 // Created by duncan on 4/30/16.
 //
 
+#include <fstream>
 #include "gtest/gtest.h"
 #include "gmock/gmock.h"
 #include "SineSignal.hpp"
@@ -35,13 +36,20 @@ TEST_F(SineTest, TestSineValue)
     double maxVoltage = 10;
     Time period(0, 0, 60);
 
+    std::filebuf fb;
+    fb.open("sine.csv", std::ios::out);
+    ostream os(&fb);
+    os << "t (seconds), sin(t)\n";
+
     SineSignal sineSignal(voltageOffset, timeOffset, minVoltage, maxVoltage, period);
 
-    for(int i = 0; i < 100; i += 10)
+    for(int i = 0; i < 1000; i += 1)
     {
         Time t(0, 0, i);
 
-        EXPECT_EQ(sine(voltageOffset, timeOffset, minVoltage, maxVoltage, period, t),
-                  sineSignal.getVoltageAtTime(t));
+        double refValue = sine(voltageOffset, timeOffset, minVoltage, maxVoltage, period, t);
+        os << t.getTotalTimeAsSeconds() << ", " << refValue << "\n";
+
+        EXPECT_EQ(refValue, sineSignal.getVoltageAtTime(t));
     }
 }
