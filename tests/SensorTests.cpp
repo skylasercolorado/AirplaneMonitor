@@ -65,7 +65,8 @@ TEST_F(SensorTests, WithMockOfDataRecorder)
     string name = "test sensor";
     int seconds = 45;
     int voltage = 23;
-    ConstantSignal *signal = new ConstantSignal(voltage, Time(0, 0, seconds));
+    Time time1(0, 0, seconds);
+    ConstantSignal *signal = new ConstantSignal(voltage, time1);
 
     SensorTest sensor(name, *signal);
 
@@ -77,8 +78,9 @@ TEST_F(SensorTests, WithMockOfDataRecorder)
                                      EXPECT_EQ(name, sensorName);
                                      EXPECT_EQ(voltage, sensorVoltage);
                                      EXPECT_EQ("test units", sensorUnits);
+                                     EXPECT_EQ(time1.getTotalTimeAsSeconds(), timeStamp.getTotalTimeAsSeconds());
 
                                  }));
 
-    sensor.takeReading(Time(0, 0, seconds), dataRecorderMock);
+    sensor.takeReading(time1, dataRecorderMock);
 }
