@@ -15,10 +15,10 @@ public:
 
     void TearDown() {}
 
-    double sine(double voltageOffset, Time timeOffset, double minVoltage, double maxVoltage, Time period);
+    double sine(double voltageOffset, Time timeOffset, double minVoltage, double maxVoltage, Time period, Time t);
 };
 
-double sine(double voltageOffset, Time timeOffset, double minVoltage, double maxVoltage, Time period, Time t)
+double SineTest::sine(double voltageOffset, Time timeOffset, double minVoltage, double maxVoltage, Time period, Time t)
 {
     double first = voltageOffset + minVoltage + (maxVoltage - minVoltage) / 2;
     double second = sin((t.getTotalTimeAsSeconds() + timeOffset.getTotalTimeAsSeconds()) * 2 * Pi / period.getTotalTimeAsSeconds())

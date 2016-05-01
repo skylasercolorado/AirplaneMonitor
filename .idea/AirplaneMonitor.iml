@@ -6,6 +6,7 @@
       <sourceFolder url="file://$MODULE_DIR$/src/Time.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/tests/PeriodicSignalTests.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/tests/ConstantSignalTests.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/tests/SineSignalTests.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/tests/TimeTests.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/tests/SignalTests.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/include/SineSignal.hpp" isTestSource="false" />
