@@ -46,7 +46,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="feadd650-a5b1-4517-9b0c-f59ef4681d73" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tests/DataRecorderTests.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/AirplaneMonitor.iml" afterPath="$PROJECT_DIR$/.idea/AirplaneMonitor.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/include/DataRecorder.hpp" afterPath="$PROJECT_DIR$/include/DataRecorder.hpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/DataRecorderTests.cpp" afterPath="$PROJECT_DIR$/tests/DataRecorderTests.cpp" />
     </list>
     <ignored path="AirplaneMonitor.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -84,6 +86,7 @@
               <caret line="65" column="46" selection-start-line="65" selection-start-column="46" selection-end-line="65" selection-end-column="46" />
               <folding>
                 <element signature="e#39#70#0" expanded="true" />
+                <marker date="1462476842466" expanded="true" signature="1053:1356" placeholder="{...}" />
               </folding>
             </state>
           </provider>
@@ -99,24 +102,34 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DataRecorder.hpp" pinned="false" current-in-tab="false">
+      <file leaf-file-name="DataRecorder.hpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/include/DataRecorder.hpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="47" selection-start-line="14" selection-start-column="47" selection-end-line="14" selection-end-column="47" />
+            <state relative-caret-position="360">
+              <caret line="24" column="40" selection-start-line="24" selection-start-column="40" selection-end-line="24" selection-end-column="40" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DataRecorderTests.cpp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="DataRecorderTests.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tests/DataRecorderTests.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+            <state relative-caret-position="372">
+              <caret line="38" column="93" selection-start-line="38" selection-start-column="93" selection-end-line="38" selection-end-column="93" />
               <folding>
                 <element signature="e#39#63#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TimeTests.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tests/TimeTests.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1575">
+              <caret line="171" column="58" selection-start-line="171" selection-start-column="58" selection-end-line="171" selection-end-column="58" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -193,8 +206,8 @@
         <option value="$PROJECT_DIR$/include/Signal.hpp" />
         <option value="$PROJECT_DIR$/include/Sensor.hpp" />
         <option value="$PROJECT_DIR$/tests/SensorTests.cpp" />
-        <option value="$PROJECT_DIR$/include/DataRecorder.hpp" />
         <option value="$PROJECT_DIR$/tests/DataRecorderTests.cpp" />
+        <option value="$PROJECT_DIR$/include/DataRecorder.hpp" />
       </list>
     </option>
   </component>
@@ -619,6 +632,7 @@
           <caret line="57" column="7" selection-start-line="57" selection-start-column="7" selection-end-line="57" selection-end-column="7" />
           <folding>
             <element signature="e#39#70#0" expanded="true" />
+            <marker date="1462476842466" expanded="true" signature="1053:1356" placeholder="{...}" />
           </folding>
         </state>
       </provider>
@@ -653,6 +667,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
           <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -660,6 +675,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -668,7 +684,7 @@
         <state relative-caret-position="615">
           <caret line="41" column="4" selection-start-line="41" selection-start-column="4" selection-end-line="41" selection-end-column="4" />
           <folding>
-            <element signature="e#40#59#0" expanded="true" />
+            <element signature="e#40#59#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -685,6 +701,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
           <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -692,6 +709,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -700,7 +718,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#40#59#0" expanded="true" />
+            <element signature="e#40#59#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -717,6 +735,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
           <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -724,6 +743,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -732,7 +752,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#40#59#0" expanded="true" />
+            <element signature="e#40#59#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -749,6 +769,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="18" column="31" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -756,6 +777,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
           <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -764,7 +786,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#40#59#0" expanded="true" />
+            <element signature="e#40#59#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -795,6 +817,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -811,6 +834,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
           <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -848,6 +872,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="15" column="10" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
+          <folding>
+            <element signature="e#130#158#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -891,16 +918,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/TimeTests.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="170" column="8" selection-start-line="170" selection-start-column="8" selection-end-line="170" selection-end-column="8" />
-          <folding>
-            <element signature="e#40#59#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/include/AngularSensor.hpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
@@ -941,6 +958,7 @@
           <caret line="65" column="46" selection-start-line="65" selection-start-column="46" selection-end-line="65" selection-end-column="46" />
           <folding>
             <element signature="e#39#70#0" expanded="true" />
+            <marker date="1462476842466" expanded="true" signature="1053:1356" placeholder="{...}" />
           </folding>
         </state>
       </provider>
@@ -955,21 +973,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/include/DataRecorder.hpp">
+    <entry file="file://$PROJECT_DIR$/tests/TimeTests.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="47" selection-start-line="14" selection-start-column="47" selection-end-line="14" selection-end-column="47" />
+        <state relative-caret-position="1575">
+          <caret line="171" column="58" selection-start-line="171" selection-start-column="58" selection-end-line="171" selection-end-column="58" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/DataRecorderTests.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+        <state relative-caret-position="372">
+          <caret line="38" column="93" selection-start-line="38" selection-start-column="93" selection-end-line="38" selection-end-column="93" />
           <folding>
             <element signature="e#39#63#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/DataRecorder.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="40" selection-start-line="24" selection-start-column="40" selection-end-line="24" selection-end-column="40" />
+          <folding />
         </state>
       </provider>
     </entry>

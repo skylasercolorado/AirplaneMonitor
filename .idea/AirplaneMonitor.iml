@@ -11,6 +11,7 @@
       <sourceFolder url="file://$MODULE_DIR$/tests/ConstantSignalTests.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/tests/SawtoothSignalTests.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/tests/SignalTests.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/tests/DataRecorderTests.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/include/SineSignal.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/include/IDataRecorder.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/include/Time.hpp" isTestSource="false" />
