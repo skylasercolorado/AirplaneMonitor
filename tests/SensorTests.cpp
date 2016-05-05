@@ -33,27 +33,45 @@ public:
 
 class SensorTests : public ::testing::Test
 {
+public:
+
+    SensorTests() : time1(0, 0, seconds)
+    {
+        signal = new ConstantSignal(voltage, time1);
+        sensor = new SensorTest(name, *signal);
+    }
+
     void SetUp() {}
 
     void TearDown() {}
+
+    string name = "test sensor";
+    int seconds = 45;
+    int voltage = 23;
+//    Time time1(0, 0, seconds);
+//    ConstantSignal *signal = new ConstantSignal(voltage, time1);
+//    SensorTest sensor(name, *signal);
+    Time time1;
+    ConstantSignal *signal;
+    SensorTest *sensor;
 };
 
 TEST_F(SensorTests, ConstructAndTestAccessors)
 {
-    string name = "test sensor";
-    int seconds = 45;
-    int voltage = 23;
-    ConstantSignal *signal = new ConstantSignal(voltage, Time(0, 0, seconds));
+//    string name = "test sensor";
+//    int seconds = 45;
+//    int voltage = 23;
+//    Time time1(0, 0, seconds);
+//    ConstantSignal *signal = new ConstantSignal(voltage, time1);
+//    SensorTest sensor(name, *signal);
 
-    SensorTest sensor(name, *signal);
+    EXPECT_EQ(name, sensor->_getName());
+    EXPECT_EQ(signal->getVoltageAtTime(0), sensor->_getSource().getVoltageAtTime(0));
 
-    EXPECT_EQ(name, sensor._getName());
-    EXPECT_EQ(signal->getVoltageAtTime(0), sensor._getSource().getVoltageAtTime(0));
-
-    Signal *testSignal = &sensor._getSource();
+    Signal *testSignal = &sensor->_getSource();
     EXPECT_TRUE(memcmp(signal, testSignal, sizeof(ConstantSignal)) == 0);
 
-    EXPECT_EQ("test units", sensor.getUnits());
+    EXPECT_EQ("test units", sensor->getUnits());
 
     delete signal;
 }
@@ -64,13 +82,12 @@ using ::testing::Invoke;
 
 TEST_F(SensorTests, WithMockOfDataRecorder)
 {
-    string name = "test sensor";
-    int seconds = 45;
-    int voltage = 23;
-    Time time1(0, 0, seconds);
-    ConstantSignal *signal = new ConstantSignal(voltage, time1);
-
-    SensorTest sensor(name, *signal);
+//    string name = "test sensor";
+//    int seconds = 45;
+//    int voltage = 23;
+//    Time time1(0, 0, seconds);
+//    ConstantSignal *signal = new ConstantSignal(voltage, time1);
+//    SensorTest sensor(name, *signal);
 
     DataRecorderMock dataRecorderMock;
 
@@ -84,7 +101,7 @@ TEST_F(SensorTests, WithMockOfDataRecorder)
 
                                  }));
 
-    sensor.takeReading(time1, dataRecorderMock);
+    sensor->takeReading(time1, dataRecorderMock);
 
     delete signal;
 }
