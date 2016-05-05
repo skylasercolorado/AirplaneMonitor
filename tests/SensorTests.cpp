@@ -48,9 +48,6 @@ public:
     string name = "test sensor";
     int seconds = 45;
     int voltage = 23;
-//    Time time1(0, 0, seconds);
-//    ConstantSignal *signal = new ConstantSignal(voltage, time1);
-//    SensorTest sensor(name, *signal);
     Time time1;
     ConstantSignal *signal;
     SensorTest *sensor;
@@ -58,13 +55,6 @@ public:
 
 TEST_F(SensorTests, ConstructAndTestAccessors)
 {
-//    string name = "test sensor";
-//    int seconds = 45;
-//    int voltage = 23;
-//    Time time1(0, 0, seconds);
-//    ConstantSignal *signal = new ConstantSignal(voltage, time1);
-//    SensorTest sensor(name, *signal);
-
     EXPECT_EQ(name, sensor->_getName());
     EXPECT_EQ(signal->getVoltageAtTime(0), sensor->_getSource().getVoltageAtTime(0));
 
@@ -82,13 +72,6 @@ using ::testing::Invoke;
 
 TEST_F(SensorTests, WithMockOfDataRecorder)
 {
-//    string name = "test sensor";
-//    int seconds = 45;
-//    int voltage = 23;
-//    Time time1(0, 0, seconds);
-//    ConstantSignal *signal = new ConstantSignal(voltage, time1);
-//    SensorTest sensor(name, *signal);
-
     DataRecorderMock dataRecorderMock;
 
     EXPECT_CALL(dataRecorderMock, log(_,_,_,_))
