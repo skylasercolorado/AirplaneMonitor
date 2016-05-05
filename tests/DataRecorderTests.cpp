@@ -2,6 +2,7 @@
 // Created by duncan on 5/5/16.
 //
 
+#include <fstream>
 #include "gtest/gtest.h"
 #include "gmock/gmock.h"
 
@@ -24,7 +25,7 @@ public:
     string sensorUnits = "test units";
 };
 
-TEST_F(DataRecorderTests, Construct)
+TEST_F(DataRecorderTests, ConstructAndUseStringbuf)
 {
     stringbuf s;
     ostream os(&s);
@@ -39,4 +40,32 @@ TEST_F(DataRecorderTests, Construct)
     testos << timeStamp << ", " << sensorName << ", " << sensorVoltage << ", " << sensorUnits;
 
     EXPECT_EQ(spec.str(), s.str());
+}
+
+TEST_F(DataRecorderTests, ConstructAndUseFile)
+{
+    filebuf s;
+    s.open("datarecorder.txt", std::ios::out);
+    ostream os(&s);
+
+    DataRecorder testRecorder (os);
+
+    testRecorder.log(timeStamp, sensorName, sensorVoltage, sensorUnits);
+
+    s.close();
+
+    filebuf spec;
+    spec.open("datarecorder.txt", std::ios::in);
+    istream testos(&spec);
+
+    string readStringFromFile;
+
+    testos >> readStringFromFile;
+
+    stringbuf verificationString;
+    ostream fixtureOs(&verificationString);
+
+    fixtureOs << timeStamp << ", " << sensorName << ", " << sensorVoltage << ", " << sensorUnits;
+
+    EXPECT_EQ(verificationString.str(), readStringFromFile);
 }
