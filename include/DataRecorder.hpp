@@ -16,6 +16,7 @@ namespace Camax
         virtual void log(Time timeStamp, string sensorName, double sensorVoltage, string sensorUnits)
         {
             out << timeStamp << ", sensor: " << sensorName << ", measurement: " << sensorVoltage << " (" << sensorUnits << ")\n";
+            out.flush();
         }
 
     private:
