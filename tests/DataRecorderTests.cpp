@@ -60,7 +60,8 @@ TEST_F(DataRecorderTests, ConstructAndUseFile)
 
     string readStringFromFile;
 
-    testos >> readStringFromFile;
+    //testos >> readStringFromFile;
+    std::getline(testos, readStringFromFile);
 
     stringbuf verificationString;
     ostream fixtureOs(&verificationString);
