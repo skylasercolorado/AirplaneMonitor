@@ -38,14 +38,15 @@ TEST_F(MonitoringSystemTests, ConstructAndUseOneSensor)
     MonitoringSystem monitor(os);
 
     double voltage = 23.45;
-    Time time1(0, 10, 10);
-    Signal *signal = new ConstantSignal(voltage, time1);
+    Time timeOffset(0, 0, 0);
+    Signal *signal = new ConstantSignal(voltage, timeOffset);
     Sensor *sensor = new AngularSensor("Direction", *signal);
 
     monitor.AddSensor(sensor);
-    monitor.TakeReading(time1);
+    Time samplingTime(0, 23, 45);
+    monitor.TakeReading(samplingTime);
 
-    string checkString = verificationString(time1, "Direction", voltage, "radians");
+    string checkString = verificationString(samplingTime, "Direction", voltage, "radians");
     EXPECT_EQ(checkString, buffer.str());
 }
 
