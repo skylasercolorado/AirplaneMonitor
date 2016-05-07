@@ -9,7 +9,7 @@
 
 namespace Camax
 {
-    class AngularSensor : public sensor
+    class AngularSensor : public Sensor
     {
     public:
         AngularSensor(string name, Signal& source) : Sensor(name, source) {}
