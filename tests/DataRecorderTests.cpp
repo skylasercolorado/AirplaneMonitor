@@ -44,8 +44,9 @@ TEST_F(DataRecorderTests, ConstructAndUseStringbuf)
 
 TEST_F(DataRecorderTests, ConstructAndUseFile)
 {
+    string testFileName = "datarecorder.txt";
     filebuf s;
-    s.open("datarecorder.txt", std::ios::out);
+    s.open(testFileName, std::ios::out);
     ostream os(&s);
 
     DataRecorder testRecorder (os);
@@ -55,7 +56,7 @@ TEST_F(DataRecorderTests, ConstructAndUseFile)
     s.close();
 
     filebuf spec;
-    spec.open("datarecorder.txt", std::ios::in);
+    spec.open(testFileName, std::ios::in);
     istream testos(&spec);
 
     string readStringFromFile;
