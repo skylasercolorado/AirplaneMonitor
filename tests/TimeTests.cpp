@@ -104,6 +104,7 @@ TEST_F(TimeTests, TestOperatorOstreamWithFile)
     std::filebuf readHandle;
     istream inputStream(&readHandle);
     string buffer;
+    string testFileName = "test.txt";
 
     for(int i = 0; i <= maxHours; i+=timeIncrement)
         for(int j = 0; j <= maxMinutes; j+=timeIncrement)
@@ -113,7 +114,7 @@ TEST_F(TimeTests, TestOperatorOstreamWithFile)
                 int timeInSeconds = i * secondsInAnHour + j * secondsInAMinute + k;
                 string verificationTime = "time in seconds: " + to_string(timeInSeconds);
 
-                writeHandle.open("test.txt", std::ios::out);
+                writeHandle.open(testFileName, std::ios::out);
                 outputStream << *time1;
                 writeHandle.close();
 
@@ -121,7 +122,7 @@ TEST_F(TimeTests, TestOperatorOstreamWithFile)
 
                 inputStream.clear();
                 buffer.clear();
-                readHandle.open("test.txt", std::ios::in);
+                readHandle.open(testFileName, std::ios::in);
 
                 char c;
                 while(inputStream.get(c))
