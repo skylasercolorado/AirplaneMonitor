@@ -9,7 +9,7 @@
 
 namespace Camax
 {
-    class DataRecorder : IDataRecorder
+    class DataRecorder : public IDataRecorder
     {
     public:
         DataRecorder(ostream &out) : out(out) {}

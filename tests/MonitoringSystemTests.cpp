@@ -31,5 +31,6 @@ TEST_F(MonitoringSystemTests, ConstructAndUseOneSensor)
     Sensor *sensor = new AngularSensor("Direction", *signal);
 
     monitor.AddSensor(sensor);
+    monitor.TakeReading(time1);
 
 }
