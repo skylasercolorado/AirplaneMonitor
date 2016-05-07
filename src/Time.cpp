@@ -29,7 +29,7 @@ namespace Camax
 {
     ostream& operator<<(ostream& os, const Time& time)
     {
-        os << "time in seconds: " << time.getTotalTimeAsSeconds();
+        os << "Time: " << time.getTotalTimeAsSeconds() << " (seconds)";
 
         return os;
     }

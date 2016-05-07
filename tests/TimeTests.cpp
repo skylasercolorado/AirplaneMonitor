@@ -85,7 +85,7 @@ TEST_F(TimeTests, TestOperatorOstream)
             {
                 time1 = new Time(i, j, k);
                 int timeInSeconds = i * secondsInAnHour + j * secondsInAMinute + k;
-                string verificationTime = "time in seconds: " + to_string(timeInSeconds);
+                string verificationTime = "Time: " + to_string(timeInSeconds) + " (seconds)";
                 buffer.str("");
                 outStream << *time1;
 
@@ -112,7 +112,7 @@ TEST_F(TimeTests, TestOperatorOstreamWithFile)
             {
                 time1 = new Time(i, j, k);
                 int timeInSeconds = i * secondsInAnHour + j * secondsInAMinute + k;
-                string verificationTime = "time in seconds: " + to_string(timeInSeconds);
+                string verificationTime = "Time: " + to_string(timeInSeconds) + " (seconds)";
 
                 writeHandle.open(testFileName, std::ios::out);
                 outputStream << *time1;
