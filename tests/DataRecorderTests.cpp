@@ -37,7 +37,7 @@ TEST_F(DataRecorderTests, ConstructAndUseStringbuf)
     stringbuf spec;
     ostream testos(&spec);
 
-    testos << timeStamp << ", " << sensorName << ", " << sensorVoltage << ", " << sensorUnits;
+    testos << timeStamp << ", sensor: " << sensorName << ", measurement: " << sensorVoltage << " (" << sensorUnits << ")\n";
 
     EXPECT_EQ(spec.str(), s.str());
 }
@@ -66,7 +66,7 @@ TEST_F(DataRecorderTests, ConstructAndUseFile)
     stringbuf verificationString;
     ostream fixtureOs(&verificationString);
 
-    fixtureOs << timeStamp << ", " << sensorName << ", " << sensorVoltage << ", " << sensorUnits;
+    fixtureOs << timeStamp << ", sensor: " << sensorName << ", measurement: " << sensorVoltage << " (" << sensorUnits << ")";
 
     EXPECT_EQ(verificationString.str(), readStringFromFile);
 }

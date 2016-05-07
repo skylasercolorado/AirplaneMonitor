@@ -15,7 +15,7 @@ namespace Camax
         DataRecorder(ostream &out) : out(out) {}
         virtual void log(Time timeStamp, string sensorName, double sensorVoltage, string sensorUnits)
         {
-            out << timeStamp << ", " << sensorName << ", " << sensorVoltage << ", " << sensorUnits;
+            out << timeStamp << ", sensor: " << sensorName << ", measurement: " << sensorVoltage << " (" << sensorUnits << ")\n";
         }
 
     private:
