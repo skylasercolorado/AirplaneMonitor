@@ -25,6 +25,7 @@
       <sourceFolder url="file://$MODULE_DIR$/include/MonitoringSystem.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/include/SawtoothSignal.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/include/PeriodicSignal.hpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/include/PressureSensor.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/app/app.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/mock/inc/DataRecorderMock.hpp" isTestSource="false" />
     </content>
