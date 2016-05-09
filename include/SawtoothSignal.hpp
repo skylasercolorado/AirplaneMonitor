@@ -6,6 +6,7 @@
 #define AIRPLANEMONITOR_SAWTOOTHSIGNAL_HPP
 
 #include "PeriodicSignal.hpp"
+#include <cmath>
 
 namespace Camax
 {

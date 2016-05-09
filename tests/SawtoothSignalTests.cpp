@@ -3,21 +3,8 @@
 //
 
 #include <fstream>
-#include "gtest/gtest.h"
-#include "gmock/gmock.h"
 #include "SawtoothSignal.hpp"
-
-using namespace Camax;
-
-class SawTests : public ::testing::Test
-{
-public:
-    void SetUp() {}
-
-    void TearDown() {}
-
-    double saw(double voltageOffset, Time timeOffset, double minVoltage, double maxVoltage, Time period, Time t);
-};
+#include "SawtoothSignalTests.hpp"
 
 double SawTests::saw(double voltageOffset, Time timeOffset, double minVoltage, double maxVoltage, Time period, Time t)
 {
