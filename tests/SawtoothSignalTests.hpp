@@ -17,7 +17,7 @@ public:
 
     void TearDown() {}
 
-    double saw(double voltageOffset, Time timeOffset, double minVoltage, double maxVoltage, Time period, Time t);
+    static double saw(double voltageOffset, Time timeOffset, double minVoltage, double maxVoltage, Time period, Time t);
 };
 
 #endif //AIRPLANEMONITOR_SAWTOOTHSIGNALTESTS_HPP

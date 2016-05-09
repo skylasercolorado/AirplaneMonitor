@@ -6,9 +6,12 @@
 #include <AngularSensor.hpp>
 #include <SineSignal.hpp>
 #include <PressureSensor.hpp>
+#include <SawtoothSignal.hpp>
+#include <TemperatureSensor.hpp>
 #include "gtest/gtest.h"
 #include "gmock/gmock.h"
 #include "MonitoringSystem.hpp"
+#include "SawtoothSignalTests.hpp"
 
 using namespace Camax;
 
@@ -76,5 +79,15 @@ TEST_F(MonitoringSystemTests, ManySensors)
     monitor.AddSensor(sensor);
     monitor.TakeReading(samplingTime);
     checkString += verificationString(samplingTime, "Pressure", voltage, "Pounds per square inch (PSI)");
+    EXPECT_EQ(checkString, buffer.str());
+
+    buffer.str("");
+
+    signal = new SawtoothSignal(voltage, timeOffset, 0, 10, Time(0, 1, 0));
+    sensor = new TemperatureSensor("Temperature", *signal);
+    monitor.AddSensor(sensor);
+    monitor.TakeReading(samplingTime);
+    checkString += verificationString(samplingTime, "Temperature",
+                                      SawTests::saw(voltage, timeOffset, 0, 10, Time(0, 1, 0), samplingTime), "Degrees Celsius");
     EXPECT_EQ(checkString, buffer.str());
 }
