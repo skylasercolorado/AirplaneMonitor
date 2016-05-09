@@ -8,6 +8,7 @@
 #include <PressureSensor.hpp>
 #include <SawtoothSignal.hpp>
 #include <TemperatureSensor.hpp>
+#include <VibrationSensor.hpp>
 #include "gtest/gtest.h"
 #include "gmock/gmock.h"
 #include "MonitoringSystem.hpp"
@@ -89,5 +90,14 @@ TEST_F(MonitoringSystemTests, ManySensors)
     monitor.TakeReading(samplingTime);
     checkString += verificationString(samplingTime, "Temperature",
                                       SawTests::saw(voltage, timeOffset, 0, 10, Time(0, 1, 0), samplingTime), "Degrees Celsius");
+    EXPECT_EQ(checkString, buffer.str());
+
+    buffer.str("");
+
+    signal = new ConstantSignal(voltage, timeOffset);
+    sensor = new VibrationSensor("Vibration", *signal);
+    monitor.AddSensor(sensor);
+    monitor.TakeReading(samplingTime);
+    checkString += verificationString(samplingTime, "Vibration", voltage, "Hertz (Hz)");
     EXPECT_EQ(checkString, buffer.str());
 }
