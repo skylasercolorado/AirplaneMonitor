@@ -9,6 +9,7 @@
 #include <SawtoothSignal.hpp>
 #include <TemperatureSensor.hpp>
 #include <VibrationSensor.hpp>
+#include <fstream>
 #include "gtest/gtest.h"
 #include "gmock/gmock.h"
 #include "MonitoringSystem.hpp"
@@ -54,6 +55,37 @@ TEST_F(MonitoringSystemTests, ConstructAndUseOneSensor)
 
     string checkString = verificationString(samplingTime, "Direction", voltage, "radians");
     EXPECT_EQ(checkString, buffer.str());
+}
+
+TEST_F(MonitoringSystemTests, ConstructAndUseOneSensorWriteToFile)
+{
+    filebuf buffer;
+    buffer.open("monitorLog.txt", std::ios::out);
+    ostream os(&buffer);
+    MonitoringSystem monitor(os);
+
+    double voltage = 23.45;
+    Time timeOffset(0, 0, 0);
+    Signal *signal = new ConstantSignal(voltage, timeOffset);
+    Sensor *sensor = new AngularSensor("Direction", *signal);
+
+    monitor.AddSensor(sensor);
+    Time samplingTime(0, 23, 45);
+    monitor.TakeReading(samplingTime);
+
+    buffer.close();
+
+    filebuf ibuffer;
+    ibuffer.open("monitorLog.txt", std::ios::in);
+    istream istream1 (&ibuffer);
+
+    string line;
+
+    getline(istream1, line);
+    line.append("\n");
+
+    string checkString = verificationString(samplingTime, "Direction", voltage, "radians");
+    EXPECT_EQ(checkString, line);
 }
 
 TEST_F(MonitoringSystemTests, ManySensors)
