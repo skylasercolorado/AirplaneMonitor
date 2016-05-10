@@ -90,12 +90,18 @@ Sensor <|-- VibrationSensor
 
 Sensor "1" o-- "1" Signal
 
+abstract class IDataRecorder{
++{abstract} log(timestamp: Time, sensorName: string, sensorVoltage: double, sensorUnits: string)
+}
+
 class DataRecorder {
 out: ostream&
 
 +DataRecorder(ostream&)
 +log(timestamp: Time, sensorName: string, sensorVoltage: double, sensorUnits: string)
 }
+
+IDataRecorder <|-- DataRecorder
 
 class MonitoringSystem {
 -recorder: DataRecorder
