@@ -59,8 +59,9 @@ TEST_F(MonitoringSystemTests, ConstructAndUseOneSensor)
 
 TEST_F(MonitoringSystemTests, ConstructAndUseOneSensorWriteToFile)
 {
+    string logFileName = "monitorLog.txt";
     filebuf buffer;
-    buffer.open("monitorLog.txt", std::ios::out);
+    buffer.open(logFileName , std::ios::out);
     ostream os(&buffer);
     MonitoringSystem monitor(os);
 
@@ -76,16 +77,20 @@ TEST_F(MonitoringSystemTests, ConstructAndUseOneSensorWriteToFile)
     buffer.close();
 
     filebuf ibuffer;
-    ibuffer.open("monitorLog.txt", std::ios::in);
+    ibuffer.open(logFileName, std::ios::in);
     istream istream1 (&ibuffer);
 
     string line;
+    string fileContents;
 
-    getline(istream1, line);
-    line.append("\n");
+    while(getline(istream1, line))
+    {
+        fileContents += line;
+        fileContents.push_back('\n');
+    }
 
     string checkString = verificationString(samplingTime, "Direction", voltage, "radians");
-    EXPECT_EQ(checkString, line);
+    EXPECT_EQ(checkString, fileContents);
 }
 
 TEST_F(MonitoringSystemTests, ManySensors)
