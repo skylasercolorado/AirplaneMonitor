@@ -222,7 +222,7 @@ TEST_F(MonitoringSystemTests, ConstructAndUseManySensorsWriteToFileMultipleSampl
 
     Time samplingTime(0, 0, 0);
     string checkString;
-    int iterations = 1;
+    int iterations = 11;
     for(int i = 0; i < iterations; i++)
     {
         samplingTime += Time(0, 1, 0);
