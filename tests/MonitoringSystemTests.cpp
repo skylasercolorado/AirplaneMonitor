@@ -160,7 +160,8 @@ TEST_F(MonitoringSystemTests, ConstructAndUseManySensorsWriteToFile)
     signal = new SineSignal(voltage, timeOffset, 0, 10, Time(0, 1, 0));
     sensor = new PressureSensor("Pressure", *signal);
     monitor.AddSensor(sensor);
-    checkString += verificationString(samplingTime, "Pressure", voltage, "Pounds per square inch (PSI)");
+    checkString += verificationString(samplingTime, "Pressure",
+                                      SineTest::sine(voltage, timeOffset, 0, 10, Time(0, 1, 0), samplingTime), "Pounds per square inch (PSI)");
 
     signal = new SawtoothSignal(voltage, timeOffset, 0, 10, Time(0, 1, 0));
     sensor = new TemperatureSensor("Temperature", *signal);
