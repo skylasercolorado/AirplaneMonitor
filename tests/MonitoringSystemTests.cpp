@@ -139,7 +139,6 @@ TEST_F(MonitoringSystemTests, ManySensors)
     EXPECT_EQ(checkString, buffer.str());
 }
 
-// TODO: Test with multiple sensors logging into a file. Refactor "ManySensors" test and use it as a starting point.
 TEST_F(MonitoringSystemTests, ConstructAndUseManySensorsWriteToFile)
 {
     string logFileName = "monitorManyLog.txt";
