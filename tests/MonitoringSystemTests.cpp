@@ -191,3 +191,68 @@ TEST_F(MonitoringSystemTests, ConstructAndUseManySensorsWriteToFile)
 
     EXPECT_EQ(checkString, fileContents);
 }
+
+TEST_F(MonitoringSystemTests, ConstructAndUseManySensorsWriteToFileMultipleSamplingTimes)
+{
+    string logFileName = "monitorManyLog.txt";
+    filebuf buffer;
+    buffer.open(logFileName , std::ios::out);
+    ostream os(&buffer);
+    MonitoringSystem monitor(os);
+
+    double voltage = 23.45;
+    Time timeOffset(0, 0, 0);
+    Signal *signal = new ConstantSignal(voltage, timeOffset);
+    Sensor *sensor = new AngularSensor("Direction", *signal);
+
+    monitor.AddSensor(sensor);
+//    string checkString = verificationString(samplingTime, "Direction", voltage, "radians");
+
+    signal = new SineSignal(voltage, timeOffset, 0, 10, Time(0, 1, 0));
+    sensor = new PressureSensor("Pressure", *signal);
+    monitor.AddSensor(sensor);
+//    checkString += verificationString(samplingTime, "Pressure", voltage, "Pounds per square inch (PSI)");
+
+    signal = new SawtoothSignal(voltage, timeOffset, 0, 10, Time(0, 1, 0));
+    sensor = new TemperatureSensor("Temperature", *signal);
+    monitor.AddSensor(sensor);
+//    checkString += verificationString(samplingTime, "Temperature",
+//                                      SawTests::saw(voltage, timeOffset, 0, 10, Time(0, 1, 0), samplingTime), "Degrees Celsius");
+
+    signal = new ConstantSignal(voltage, timeOffset);
+    sensor = new VibrationSensor("Vibration", *signal);
+    monitor.AddSensor(sensor);
+//    checkString += verificationString(samplingTime, "Vibration", voltage, "Hertz (Hz)");
+
+    Time samplingTime(0, 0, 0);
+    string checkString;
+    int iterations = 1;
+    for(int i = 0; i < iterations; i++)
+    {
+        samplingTime += Time(0, 1, 0);
+        monitor.TakeReading(samplingTime);
+
+        checkString += verificationString(samplingTime, "Direction", voltage, "radians");
+        checkString += verificationString(samplingTime, "Pressure", voltage, "Pounds per square inch (PSI)");
+        checkString += verificationString(samplingTime, "Temperature",
+                                          SawTests::saw(voltage, timeOffset, 0, 10, Time(0, 1, 0), samplingTime), "Degrees Celsius");
+        checkString += verificationString(samplingTime, "Vibration", voltage, "Hertz (Hz)");
+    }
+
+    buffer.close();
+
+    filebuf ibuffer;
+    ibuffer.open(logFileName, std::ios::in);
+    istream istream1 (&ibuffer);
+
+    string line;
+    string fileContents;
+
+    while(getline(istream1, line))
+    {
+        fileContents += line;
+        fileContents.push_back('\n');
+    }
+
+    EXPECT_EQ(checkString, fileContents);
+}
