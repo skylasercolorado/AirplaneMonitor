@@ -204,6 +204,7 @@ TEST_F(MonitoringSystemTests, ConstructAndUseManySensorsWriteToFileMultipleSampl
 
     double voltage = 23.45;
     Time timeOffset(0, 0, 0);
+
     Signal *signal = new ConstantSignal(voltage, timeOffset);
     Sensor *sensor = new AngularSensor("Direction", *signal);
     monitor.AddSensor(sensor);
