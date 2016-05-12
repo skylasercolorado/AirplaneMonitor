@@ -205,25 +205,19 @@ TEST_F(MonitoringSystemTests, ConstructAndUseManySensorsWriteToFileMultipleSampl
     Time timeOffset(0, 0, 0);
     Signal *signal = new ConstantSignal(voltage, timeOffset);
     Sensor *sensor = new AngularSensor("Direction", *signal);
-
     monitor.AddSensor(sensor);
-//    string checkString = verificationString(samplingTime, "Direction", voltage, "radians");
 
     signal = new SineSignal(voltage, timeOffset, 0, 10, Time(0, 1, 0));
     sensor = new PressureSensor("Pressure", *signal);
     monitor.AddSensor(sensor);
-//    checkString += verificationString(samplingTime, "Pressure", voltage, "Pounds per square inch (PSI)");
 
     signal = new SawtoothSignal(voltage, timeOffset, 0, 10, Time(0, 1, 0));
     sensor = new TemperatureSensor("Temperature", *signal);
     monitor.AddSensor(sensor);
-//    checkString += verificationString(samplingTime, "Temperature",
-//                                      SawTests::saw(voltage, timeOffset, 0, 10, Time(0, 1, 0), samplingTime), "Degrees Celsius");
 
     signal = new ConstantSignal(voltage, timeOffset);
     sensor = new VibrationSensor("Vibration", *signal);
     monitor.AddSensor(sensor);
-//    checkString += verificationString(samplingTime, "Vibration", voltage, "Hertz (Hz)");
 
     Time samplingTime(0, 0, 0);
     string checkString;
@@ -234,7 +228,6 @@ TEST_F(MonitoringSystemTests, ConstructAndUseManySensorsWriteToFileMultipleSampl
         monitor.TakeReading(samplingTime);
 
         checkString += verificationString(samplingTime, "Direction", voltage, "radians");
-//        checkString += verificationString(samplingTime, "Pressure", voltage, "Pounds per square inch (PSI)");
         checkString += verificationString(samplingTime, "Pressure",
                                           SineTest::sine(voltage, timeOffset, 0, 10, Time(0, 1, 0), samplingTime), "Pounds per square inch (PSI)");
         checkString += verificationString(samplingTime, "Temperature",
