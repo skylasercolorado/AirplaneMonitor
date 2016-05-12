@@ -223,10 +223,10 @@ TEST_F(MonitoringSystemTests, ConstructAndUseManySensorsWriteToFileMultipleSampl
 
     Time samplingTime(0, 0, 0);
     string checkString;
-    int iterations = 11;
+    int iterations = 100;
     for(int i = 0; i < iterations; i++)
     {
-        samplingTime += Time(0, 1, 0);
+        samplingTime += Time(0, 0, 1);
         monitor.TakeReading(samplingTime);
 
         checkString += verificationString(samplingTime, "Direction", voltage, "radians");
