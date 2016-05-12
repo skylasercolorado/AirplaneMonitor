@@ -3,21 +3,22 @@
 //
 
 #include <fstream>
-#include "gtest/gtest.h"
-#include "gmock/gmock.h"
-#include "SineSignal.hpp"
-
-using namespace Camax;
-
-class SineTest : public ::testing::Test
-{
-public:
-    void SetUp() {}
-
-    void TearDown() {}
-
-    double sine(double voltageOffset, Time timeOffset, double minVoltage, double maxVoltage, Time period, Time t);
-};
+#include "SineSignalTests.hpp"
+//#include "gtest/gtest.h"
+//#include "gmock/gmock.h"
+//#include "SineSignal.hpp"
+//
+//using namespace Camax;
+//
+//class SineTest : public ::testing::Test
+//{
+//public:
+//    void SetUp() {}
+//
+//    void TearDown() {}
+//
+//    double sine(double voltageOffset, Time timeOffset, double minVoltage, double maxVoltage, Time period, Time t);
+//};
 
 double SineTest::sine(double voltageOffset, Time timeOffset, double minVoltage, double maxVoltage, Time period, Time t)
 {

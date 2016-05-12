@@ -14,6 +14,7 @@
 #include "gmock/gmock.h"
 #include "MonitoringSystem.hpp"
 #include "SawtoothSignalTests.hpp"
+#include "SineSignalTests.hpp"
 
 using namespace Camax;
 
@@ -233,7 +234,9 @@ TEST_F(MonitoringSystemTests, ConstructAndUseManySensorsWriteToFileMultipleSampl
         monitor.TakeReading(samplingTime);
 
         checkString += verificationString(samplingTime, "Direction", voltage, "radians");
-        checkString += verificationString(samplingTime, "Pressure", voltage, "Pounds per square inch (PSI)");
+//        checkString += verificationString(samplingTime, "Pressure", voltage, "Pounds per square inch (PSI)");
+        checkString += verificationString(samplingTime, "Pressure",
+                                          SineTest::sine(voltage, timeOffset, 0, 10, Time(0, 1, 0), samplingTime), "Pounds per square inch (PSI)");
         checkString += verificationString(samplingTime, "Temperature",
                                           SawTests::saw(voltage, timeOffset, 0, 10, Time(0, 1, 0), samplingTime), "Degrees Celsius");
         checkString += verificationString(samplingTime, "Vibration", voltage, "Hertz (Hz)");
