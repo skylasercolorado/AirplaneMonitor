@@ -5,7 +5,7 @@ project(AirplaneMonitor)
 # Uncomment to enable 'debug' code
 #add_definitions(-DDEBUG)
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wsign-conversion -Werror -Wall -Wextra -Wno-unused-parameter -pedantic -g -O0 -ansi -std=c++11")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wsign-conversion -Werror -Wall -Wextra -Wno-unused-parameter -pedantic -g -O0 -ansi -std=c++11 --coverage")
 
 # Project directory structure. DO NOT CHANGE.
 set(APP_DIR "app") # Where the application main() code resides
@@ -46,7 +46,7 @@ file(GLOB MOCK_INC_FILES "${MOCK_INC_DIR}/*.h*")
 # Create a library from the source code.
 # Note: INC_FILES have to be included so the auto completion
 # and code generation work. This has to be done for all targets.
-add_library(${PROJ_LIB} STATIC ${SOURCE_FILES} ${INC_FILES})
+add_library(${PROJ_LIB} SHARED ${SOURCE_FILES} ${INC_FILES})
 
 # Create the application's executable, using the source library.
 add_executable(${APPLICATION} ${APP_FILES} ${INC_FILES})
