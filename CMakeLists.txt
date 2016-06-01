@@ -64,10 +64,10 @@ target_link_libraries(${TEST_RUNNER} ${PROJ_LIB})
 # Create the coverage info and display it in Firefox
 add_custom_command(OUTPUT Coverage.out
         COMMAND lcov --zerocounters --directory .
-        COMMAND lcov --capture --initial --directory . --output-file app
+        COMMAND lcov --capture --initial --directory . --output-file ${CMAKE_PROJECT_NAME}
         COMMAND ${TEST_RUNNER}
-        COMMAND lcov --no-checksum --directory . --capture --output-file app.info
-        COMMAND genhtml app.info
+        COMMAND lcov --no-checksum --directory . --capture --output-file ${CMAKE_PROJECT_NAME}.info
+        COMMAND genhtml ${CMAKE_PROJECT_NAME}.info
         COMMAND firefox index.html
         DEPENDS ${TEST_RUNNER}
         )
