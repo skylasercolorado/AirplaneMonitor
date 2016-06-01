@@ -61,16 +61,17 @@ target_link_libraries(${TEST_RUNNER} "gmock")
 target_link_libraries(${TEST_RUNNER} "gtest")
 target_link_libraries(${TEST_RUNNER} ${PROJ_LIB})
 
+# Create the coverage info and display it in Firefox
 add_custom_command(OUTPUT Coverage.out
         COMMAND lcov --zerocounters --directory .
         COMMAND lcov --capture --initial --directory . --output-file app
         COMMAND ${TEST_RUNNER}
         COMMAND lcov --no-checksum --directory . --capture --output-file app.info
         COMMAND genhtml app.info
+        COMMAND firefox index.html
         DEPENDS ${TEST_RUNNER}
         )
 add_custom_target(CoverageInfo
-#        DEPENDS ${TEST_RUNNER} Coverage.out)
          DEPENDS Coverage.out)
 
 
