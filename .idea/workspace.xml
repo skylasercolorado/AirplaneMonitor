@@ -47,9 +47,7 @@
     </ADDITIONAL_GENERATION_ENVIRONMENT>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="feadd650-a5b1-4517-9b0c-f59ef4681d73" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CMakeLists.txt" afterPath="$PROJECT_DIR$/CMakeLists.txt" />
-    </list>
+    <list default="true" id="feadd650-a5b1-4517-9b0c-f59ef4681d73" name="Default" comment="" />
     <ignored path="AirplaneMonitor.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -130,8 +128,8 @@
       <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="70" column="33" selection-start-line="70" selection-start-column="33" selection-end-line="70" selection-end-column="33" />
+            <state relative-caret-position="246">
+              <caret line="54" column="60" selection-start-line="54" selection-start-column="60" selection-end-line="54" selection-end-column="60" />
               <folding />
             </state>
           </provider>
@@ -336,7 +334,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="/usr/bin/firefox" />
+    <property name="last_opened_file_path" value="/bin/ls" />
   </component>
   <component name="RunManager" selected="Application.CoverageInfo">
     <configuration default="true" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" PASS_PARENT_ENVS_2="true" TEST_MODE="SUITE_TEST">
@@ -516,7 +514,7 @@
       <envs />
       <method />
     </configuration>
-    <configuration default="false" name="CoverageInfo" type="CMakeRunConfiguration" factoryName="Application" activateToolWindowBeforeRun="false" WORKING_DIR="" PASS_PARENT_ENVS_2="true" PROJECT_NAME="AirplaneMonitor" TARGET_NAME="CoverageInfo" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="AirplaneMonitor" RUN_TARGET_NAME="testrunner">
+    <configuration default="false" name="CoverageInfo" type="CMakeRunConfiguration" factoryName="Application" activateToolWindowBeforeRun="false" WORKING_DIR="" PASS_PARENT_ENVS_2="true" PROJECT_NAME="AirplaneMonitor" TARGET_NAME="CoverageInfo" CONFIG_NAME="Debug" RUN_PATH="/bin/ls">
       <envs />
       <method />
     </configuration>
@@ -956,8 +954,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="70" column="33" selection-start-line="70" selection-start-column="33" selection-end-line="70" selection-end-column="33" />
+        <state relative-caret-position="246">
+          <caret line="54" column="60" selection-start-line="54" selection-start-column="60" selection-end-line="54" selection-end-column="60" />
           <folding />
         </state>
       </provider>
