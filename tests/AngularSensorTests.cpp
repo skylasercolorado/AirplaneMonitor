@@ -22,21 +22,32 @@ public:
 
 class AngularSensorTests : public ::testing::Test
 {
-    void SetUp() {}
+public:
+    AngularSensorTests() : timeOffset(0, 0, 10), signal(voltageOffset, timeOffset), angularSensor(name, signal)
+    {
+    }
+
+    void SetUp()
+    {
+    }
 
     void TearDown() {}
+
+    string name = "angular sensor";
+    double voltageOffset = 10.0;
+//    Time timeOffset(0, 0, 10);
+    Time timeOffset;
+//    ConstantSignal signal(voltageOffset, timeOffset);
+    ConstantSignal signal;
+//    AngularSensorTest angularSensor(name, signal);
+    AngularSensorTest angularSensor;
+
+    const string angularUnits = "radians";
 
 
 };
 
 TEST_F(AngularSensorTests, getUnits)
 {
-    string name = "angular sensor";
-    double voltageOffset = 10.0;
-    Time timeOffset(0, 0, 10);
-    ConstantSignal signal(voltageOffset, timeOffset);
-    AngularSensorTest angularSensor(name, signal);
-
-    const string angularUnits = "radians";
     EXPECT_EQ(angularUnits, angularSensor.GetUnits());
 }
