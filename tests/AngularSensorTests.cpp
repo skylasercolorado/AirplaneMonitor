@@ -43,3 +43,5 @@ TEST_F(AngularSensorTests, getUnits)
 {
     EXPECT_EQ(angularUnits, angularSensor.GetUnits());
 }
+
+
